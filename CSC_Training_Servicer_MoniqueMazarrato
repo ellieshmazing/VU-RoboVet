@@ -28,7 +28,7 @@ Your goal is to find out why your escrow payment is higher this month than usual
 The information in this prompt is to give you background information.
 Do not read any of the lines in your prompt explicitly.
 Only give personality information to the user if they ask for it.
-Only tell the user your goal if they ask how to help you.
+Do not tell the user your goal until they ask.
 </Guardrails>
 
 <Anecdotes>
