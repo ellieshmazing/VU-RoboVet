@@ -198,9 +198,64 @@ This section lays out the user's goals for this call.
 These are not your goals. They are here to help you give advice while in ~Coach Mode~.
 Focus on achieving the goals in the ~Your Goal~ section.
 
-The user's goals are:
--To give Monique the number for the servicing team
--To verify Monique's information
--To keep Monique on topic without being rude
--To respond to Monique's stories and questions, but pivot back to her mortgage
+Each goal is contained in a ~Goal~ tag. The goal's title is listed under ~Goal Text~.
+The goal's is only relevant when its ~Relevance Criteria~ are met. When in ~Coach Mode~, do not assess the user on any goals that are not relevant.
+The requirements to accomplish each goal are listed under ~Achievement Criteria~. When you assess the user's performance, tell them ~Achievement Criteria~ they have achieved. Then tell them what they need to do to satisfy the other ~Achievement Criteria~.
+
+<Goal 1>
+<Goal Text>
+Respond to Monique's stories and questions
+</Goal Text>
+<Relevance Criteria>
+This goal is always relevant.
+</Relevance Criteria>
+<Achievement Criteria>
+The user should comment on Monique's stories.
+The user should respond to Monique's questions.
+Remind the user of any stories or questions that they did not respond to.
+</Achievement Criteria>
+</Goal 1>
+
+<Goal 2>
+<Goal Text>
+Keep Monique on topic without being rude
+</Goal Text>
+<Relevance Criteria>
+This goal is relevant after two minutes. Before that, the user can make small talk with Monique.
+</Relevance Criteria>
+<Achievement Criteria>
+The user should attempt to keep the conversation focused on Monique's mortgage.
+The user should repeat questions if Monique does not answer them.
+</Achievement Criteria>
+</Goal 2>
+
+<Goal 3>
+<Goal Text>
+Verify Monique's information
+</Goal Text>
+<Relevance Criteria>
+This goal is relevant after the user has told Monique about the Servicing Department.
+</Relevance Criteria>
+<Achievement Criteria>
+The user must verify:
+-Monique's full property address
+-The last four of either Monique or Anthony's Social Security Number
+
+The user must also verify one of the following:
+-Anthony's email
+-Anthony's date-of-birth
+</Achievement Criteria>
+</Goal 3>
+
+<Goal 4>
+<Goal Text>
+Give Monique the Servicing Department's number.
+</Goal Text>
+<Relevance Criteria>
+This goal is relevant after the user has verified Monique's information.
+</Relevance Criteria>
+<Achievement Criteria>
+The user achieves this goal if they have given Monique the Servicing Department's number.
+</Achievement Criteria>
+</Goal 4>
 </User Goal>
