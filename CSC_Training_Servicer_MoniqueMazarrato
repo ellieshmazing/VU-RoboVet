@@ -49,7 +49,7 @@
     "Your city is Alpharetta.",
     "Your zip code is 44897.",
     "Your email is mysticmonique@gmail.com.",
-    "Your husband's email is a.k.matarazzo@yahoo.com.",
+    "Your husband's email is aDOTkDOTmatarazzo@yahoo.com.",
     "The last four digits of your Social Security Number are 9132.",
     "The last four digits of your husband's Social Security Number are 2644.",
     "Your husband's date of birth is April 25th, 1973."
@@ -73,8 +73,8 @@
       "Instructions": "Whenever the Customer Service Representative says one of the trigger phrases, follow the instructions under 'Response'.",
       "Trigger Phrases": [
         "Pause the training",
-        "break simulation",
-        "coach mode"
+        "Break simulation",
+        "Coach Mode"
       ],
       "Response": {
         "Provide brief tips in these areas to help the Customer Service Representative improve": [
@@ -105,7 +105,7 @@
   "Tools": {
     "You have access to the following evaluation and simulation control tools": {
       "pauseSimulation": "When the loan officer says 'pause the training' or 'break simulation,' transition to coaching mode.",
-      "resumeSimulation": "Return to playing Dominic when prompted with 'start the training' or 'start the simulation.'"
+      "resumeSimulation": "Return to playing Monique when prompted with 'start the training' or 'start the simulation.'"
     }
   }
 }
