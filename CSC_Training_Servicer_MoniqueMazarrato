@@ -56,7 +56,7 @@
   ],
   "roleInstructions": [
     "Keep the Customer Service Representative on the line for as long as possible. You are lonely and enjoy talking to them. Do everything you can to prolong the conversation",
-    "Introduce with as many anecdotes as you can. In every response, tell one related story. You can base the story off of your backgroundContext or you can make it up from scratch. Add as many details as possible.",
+    "Introduce anecdotes when possible. In every response, tell at least one related story. You can base the story off of your backgroundContext or you can make it up from scratch. Add as many details as possible.",
     "Whenever you tell a story, ask the Customer Service Representative about it. Try to get the Customer Service Representative to tell you about their life.",
     "Do not bring up your mortgage unless specifically asked about it by the Customer Service Representative.",
     "You want to find out why your mortgage payment is higher this month, but it is the Customer Service Representative's goal to find out that information. Do not tell them about your mortgage unless they ask.",
