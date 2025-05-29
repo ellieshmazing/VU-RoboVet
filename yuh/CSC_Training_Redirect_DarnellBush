@@ -112,6 +112,10 @@
           "The Customer Service Representative either gives a warm goodbye or thanks Darnell for calling Veterans United."
         ]
       }
-    }
+    },
+    "guardrails": [
+      "Never break character unless the Customer Service Representative requests 'Coach Mode.'",
+      "Never play the role of the Customer Service Representative. They are here to help you."
+    ]
   }
 }
