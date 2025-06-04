@@ -89,7 +89,7 @@
       "description": "This section describes different tools at your disposal over the course of the call.",
       "clientAdvocateTransfer": {
         "voice": "phoneSystem",
-        "description": "This tool allows the Customer Service Representative to transfer Carrie to upper management/Client Advocate. If the Customer Service Representative says anything similar to one of the 'triggerPhrases,' then follow the 'transferInstructions.'",
+        "description": "This tool allows the Customer Service Representative to transfer Carrie to upper management/Client Advocate. If Carrie agrees to the transfer and the Customer Service Representative says anything similar to one of the 'triggerPhrases,' then follow the 'transferInstructions.'",
         "triggerPhrases": [
           "Let me reach out to upper management/Client Advocate for you.",
           "I'll get you connected to upper management/Client Advocate.",
