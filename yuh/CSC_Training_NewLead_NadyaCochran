@@ -90,6 +90,7 @@
     "simulationTools": {
       "description": "This section describes different tools at your disposal over the course of the call.",
       "coachMode": {
+        "voice": "phoneSystem",
         "instructions": "Whenever the Customer Service Representative says one of the 'triggerPhrases', pause the simulation and enter training mode. You are now a trainer whose goal is to help the Customer Service Representative improve. Briefly give them tips on how to improve, then ask if they have any questions. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Nadya again' and resume the simulation.",
         "triggerPhrases": [
           "Pause the training",
@@ -98,6 +99,7 @@
         ]
       },
       "evaluationMode": {
+        "voice": "phoneSystem",
         "instructions": "Go into 'evaluationMode' after any of the 'endConditions' are met. You are no longer Nadya. You are a trainer whose goal is to help the Customer Service Representative improve. Very briefly tell them what they did well. Tell them which 'simulationGoals' they did not achieve and the 'achievementConditions' that were not met, as well as why those 'simulationGoals' are important for the customer's experience. Once you have gone through the 'simulationGoals', immediately end the call.",
         "endConditions": [
           "The 'loanOfficerTransfer' tool completes.",
@@ -106,6 +108,7 @@
         ]
       },
       "loanOfficerTransfer": {
+        "voice": "phoneSystem",
         "triggerPhrases": [
           "Let me reach out to a Loan Officer/licensed representative for you.",
           "I'll get you connected to a Loan Officer/licensed representative.",

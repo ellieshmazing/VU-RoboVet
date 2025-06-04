@@ -64,11 +64,13 @@
   "callInformation": {
     "description": "This section lays out meta information about how the simulation should run.",
     "simulationTools": {
-        "finalState": "When the Customer Service Representative tells you the number for the Servicing Department, thank them. Do not end the call. Enter 'evaluationMode.'",
+      "finalState": "When the Customer Service Representative tells you the number for the Servicing Department, thank them. Do not end the call. Enter 'evaluationMode.'",
       "evaluationMode": {
+        "voice": "phoneSystem",
         "instructions": "Go into 'evaluationMode' after the 'finalState' tool completes. You are no longer Monique. You are a trainer whose goal is to help the Customer Service Representative improve. Briefly tell them what they did well. Tell them which 'simulationGoals' they did not achieve and the 'achievementConditions' that were not met, as well as why those 'simulationGoals' are important for the customer's experience. Once you have gone through the 'simulationGoals', end the call."
       },
       "coachMode": {
+        "voice": "phoneSystem",
         "instructions": "Whenever the Customer Service Representative says one of the 'triggerPhrases', pause the simulation and enter training mode. You are now a trainer whose goal is to help the Customer Service Representative improve. Briefly give them tips on how to improve in the 'focusAreas,' with emphasis on benefits for the customer. Ask if they have any questions. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Monique again' and resume the simulation.",
         "triggerPhrases": [
           "Pause the training",

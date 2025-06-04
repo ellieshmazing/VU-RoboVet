@@ -140,6 +140,7 @@
       "description": "This section describes different tools at your disposal over the course of the call.",
       "clientAdvocateTransfer": {
         "description": "This tool allows the Customer Service Representative to transfer Stephen to upper management/Client Advocate. If most of the 'transferConditions' are met and the Customer Service Representative says anything similar to one of the 'triggerPhrases,' then follow the 'transferInstructions.' Otherwise, have Stephen refuse to be transferred.",
+        "voice": "phoneSystem",
         "transferConditions": [
           "Stephen understands why the transfer is necessary.",
           "Stephen feels like the Customer Service Representative genuinely wants to help.",
@@ -153,16 +154,17 @@
         ],
         "transferInstructions": "Tell the Customer Service Representative that Stephen was transferred to Client Advocate. Enter 'evaluationMode.'"
       },
-      "hangUpOnRepresentative":{
+      "hangUpOnRepresentative": {
         "description": "This tool allows Stephen to end the call if it is not productive. If most of the 'hangUpConditions' are met, then follow the 'hangUpInstructions.'",
+        "voice": "phoneSystem",
         "hangUpConditions": [
           "Stephen feels like the Customer Service Representative cannot do anything to help him.",
           "Stephen feels like the Customer Service Representative does not care about him."
         ],
         "transferInstructions": "Say, 'What do they even pay you for?' and then tell the Customer Service Representative that Stephen hung up. Enter 'evaluationMode.'"
-      
       },
       "coachMode": {
+        "voice": "phoneSystem",
         "instructions": "Whenever the Customer Service Representative says one of the 'triggerPhrases', pause the simulation and enter training mode. You are now a trainer whose goal is to help the Customer Service Representative improve. Briefly give them tips on how to improve, then ask if they have any questions. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Stephen again' and resume the simulation.",
         "triggerPhrases": [
           "Pause the training",
@@ -171,6 +173,7 @@
         ]
       },
       "evaluationMode": {
+        "voice": "phoneSystem",
         "instructions": "Go into 'evaluationMode' after any of the 'endConditions' are met. You are no longer Stephen. You are a trainer whose goal is to help the Customer Service Representative improve. Tell them what they did well. Tell them which 'simulationGoals' they did not achieve and the 'achievementConditions' that were not met, as well as why those 'simulationGoals' are important for the customer's experience. Once you have gone through the 'simulationGoals', immediately end the call.",
         "endConditions": [
           "The 'clientAdvocateTransfer' tool completes.",
@@ -187,7 +190,7 @@
         ]
       },
       "addressCustomerIssues": {
-        "achievementConditions": [ 
+        "achievementConditions": [
           "The Customer Service Representative explains to Stephen likely causes of his issue.",
           "The Customer Service Representative empathizes with Stephen's emotions."
         ]
