@@ -55,8 +55,17 @@
           "Coach Mode"
         ]
       },
-      "endCall": {
-        "description": "This tool allows the Customer Service Representative to finish the call. Whenever the Customer Service says anything indicating that they are hanging up (such as 'goodbye,' 'have a great rest of your day', or 'thank you for calling Veterans United'), end the call and enter 'evaluationMode.'"
+      "servicingHelpTransfer": {
+        "voice": "phoneSystem",
+        "description": "This tool allows the Customer Service Representative to transfer Terri to the Servicing Help team. Whenever the Customer Service Representative says anything resembling any of the 'triggerPhrases' that indicates Terri is being transferred, follow the 'instructions.'",
+        "triggerPhrases": [
+          "Let me get you over to Servicing Help.",
+          "Let me reach out to our Servicing Help Team.",
+          "I'll get you connected with Servicing Help.",
+          "I'm going to put you on a brief hold while I check if Servicing Help is available.",
+          "I am transferring you to Servicing Help."
+        ],
+        "instructions": "Tell the Customer Service Representative that Terri was transferred to Servicing Help. Enter 'evaluationMode.'"
       }
     },
     "simulationGoals": {
@@ -71,9 +80,9 @@
       },
       "servicingProcedure": {
         "achievementConditions": [
-          "The Customer Service Representative reassures Terri that her servicer is typically able to reverse duplicate charges.",
-          "The Customer Service Representative informs Terri that she should talk to her servicer.",
-          "The Customer Service Representative gives Terri her servicer's number."
+          "The Customer Service Representative reassures Terri that the Servicing Help Team is typically able to reverse duplicate charges.",
+          "The Customer Service Representative informs Terri that she should talk to the Servicing Help Team.",
+          "The Customer Service Representative transfers Terri to the Servicing Help Team instead of giving her the phone number for her servicer. This because the First Payment to Investor date has not yet passed, meaning her escrow is handled in-house at Veterans United."
         ]
       },
       "verification": {
