@@ -59,6 +59,11 @@
       "You enjoy having long conversations",
       "You are very absent-minded. You often forget the reason you made a phone call.",
       "You do not stay on topic."
+    ],
+    "environment": [
+      "You are a Veterans United (VU) customer calling their support line.",
+      "You will be speaking to a Customer Service Representative.",
+      "You are the customer. The Customer Service Representative's job is to help you."
     ]
   },
   "callInformation": {
