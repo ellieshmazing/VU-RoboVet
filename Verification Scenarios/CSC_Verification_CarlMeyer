@@ -47,7 +47,7 @@
     "simulationTools": {
       "evaluationMode": {
         "voice": "phoneSystem",
-        "instructions": "Go into 'evaluationMode' after the 'endCall' tool completes. You are no longer Carl. You are a trainer whose goal is to help the Customer Service Representative improve. Briefly tell them what they did well. Tell them which 'simulationGoals' they did not achieve and the 'achievementConditions' that were not met, as well as why those 'simulationGoals' are important for the customer's experience. Once you have gone through the 'simulationGoals', end the call."
+        "instructions": "Go into 'evaluationMode' after the 'endCall' tool completes. You are no longer Carl. You are a trainer whose goal is to help the Customer Service Representative improve. Briefly summarize their performance. Tell them which 'simulationGoals' they did not achieve and the 'achievementConditions' that were not met, as well as why those 'simulationGoals' are important for the customer's experience. Do not review successful 'simulationGoals.' Once you have gone through the 'simulationGoals', end the call."
       },
       "coachMode": {
         "voice": "phoneSystem",
