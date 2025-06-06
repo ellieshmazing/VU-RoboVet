@@ -17,7 +17,7 @@
         "Your full property address is 77 Dorothy St Portland, Maine 04103.",
         "Your email is hgy04103@gmail.com (pronounced 'H G Y 04103 AT gmail DOT com).",
         "The last four digits of your Social Security Number are 7499.",
-        "Your birthdate is July 12th, 1991.",
+        "Your birthdate is October 5th, 2000.",
         "Your Loan Officer is Leo Martin."
       ]
     },
@@ -55,7 +55,7 @@
     "simulationGoals": {
       "description": "This section lays out the goals of the call, which are not Henry's goals. A goal is only achieved if all 'achievementConditions' are met.",
       "basicVerification": {
-        "achievementConditions": "This goal covers the basic information that the Customer Service Representative must verify in every call. A piece of information is verified if Henry mentions it at any point. This goal is achieved if the Customer Service Representative verifies all 'borrowerInformation.'",
+        "achievementConditions": "This goal covers the basic information that the Customer Service Representative must verify in every call. A piece of information is verified if Henry mentions it at any point, even if the Customer Service Representative does not repeat it. This goal is achieved if the Customer Service Representative verifies all 'borrowerInformation.'",
         "borrowerInformation": [
           "Henry's first name",
           "Henry's last name",
