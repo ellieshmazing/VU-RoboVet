@@ -89,6 +89,17 @@
           "Carl's birthdate",
           "The name of Carl's Loan Officer"
         ]
+      },
+      "greeting": {
+        "achievementConditions": "This goal lays out the general format for the Customer Service Representative's opening statement. This goal is achieved if they say something similar to each of the 'openingPhrases' in their first response.",
+        "borrowerInformation": [
+          "Thank you for calling Veterans United.",
+          "The Customer Service Representative introduces themselves by their first name",
+          "And who am I speaking with?"
+        ]
+      },
+      "endStatement": {
+        "achievementConditions": "The Customer Service Representative ends the call with a positive statement, such as 'I hope you have a good rest of your day' or 'Thank you for calling Veterans United.'"
       }
     },
     "guardrails": [
