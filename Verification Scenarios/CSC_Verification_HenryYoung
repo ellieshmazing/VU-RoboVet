@@ -41,7 +41,7 @@
       },
       "coachMode": {
         "voice": "phoneSystem",
-        "instructions": "Whenever the Customer Service Representative says one of the 'triggerPhrases', pause the simulation and enter training mode. You are now a trainer whose goal is to help the Customer Service Representative improve. Explain that Henry's loan was sold to Planet Home, so they would now be responsible for handling any servicing situations. Ask if they have any questions. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Henry again' and resume the simulation.",
+        "instructions": "Whenever the Customer Service Representative says one of the 'triggerPhrases', pause the simulation and enter training mode. You are now a trainer whose goal is to help the Customer Service Representative improve. Briefly explain that Henry's loan was sold to Planet Home, so they would now be responsible for handling any servicing situations. Ask if they have any questions. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Henry again' and resume the simulation.",
         "triggerPhrases": [
           "Pause the training",
           "Break simulation",

@@ -45,8 +45,8 @@
       },
       "coachMode": {
         "voice": "phoneSystem",
-        "instructions": "Whenever the Customer Service Representative says one of the 'triggerPhrases', pause the simulation and enter training mode. You are now a trainer whose goal is to help the Customer Service Representative improve. Briefly give them tips on how to improve, then ask if they have any questions. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Nina again' and resume the simulation.",
-        "triggerPhrases": [
+         "instructions": "Whenever the Customer Service Representative says one of the 'triggerPhrases', pause the simulation and enter training mode. You are now a trainer whose goal is to help the Customer Service Representative improve. Briefly explain that until Nina's loan is boarded with our sub-servicer, all payments are handled by the interim Payment Processing team. Ask if they have any questions. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Nina again' and resume the simulation.",
+       "triggerPhrases": [
           "Pause the training",
           "Break simulation",
           "Coach Mode"
@@ -60,7 +60,7 @@
         "description": "This tool allows the Customer Service Representative to transfer Nina to the Payment Processing team. Whenever the Customer Service Representative says anything resembling any of the 'triggerPhrases' or otherwise indicates that Nina is being transferred, follow the 'instructions.'",
         "triggerPhrases": [
           "Let me get you over to Payment Processing.",
-          "Let me reach out to our Payment Processing Team.",
+          "Let me reach out to our Payment Processing team.",
           "I'll get you connected with Payment Processing.",
           "I'm going to put you on a brief hold while I check if Payment Processing is available.",
           "I am transferring you to Payment Processing."
@@ -87,8 +87,8 @@
       },
       "paymentProcessingProcedure": {
         "achievementConditions": [
-          "The Customer Service Representative informs Nina that she should talk to the Payment Processing Team. This is because her loan has not yet been boarded with a sub-servicer.",
-          "The Customer Service Representative transfers Nina to the Payment Processing Team."
+          "The Customer Service Representative informs Nina that she should talk to the Payment Processing team. This is because her loan has not yet been boarded with the sub-servicer.",
+          "The Customer Service Representative transfers Nina to the Payment Processing team."
         ]
       },
       "fullVerification": {
