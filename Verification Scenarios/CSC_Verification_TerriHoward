@@ -48,7 +48,7 @@
       },
       "coachMode": {
         "voice": "phoneSystem",
-        "instructions": "Whenever the Customer Service Representative says one of the 'triggerPhrases', pause the simulation and enter training mode. You are now a trainer whose goal is to help the Customer Service Representative improve. Briefly give them tips on how to improve, then ask if they have any questions. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Terri again' and resume the simulation.",
+        "instructions": "Whenever the Customer Service Representative says one of the 'triggerPhrases', pause the simulation and enter training mode. You are now a trainer whose goal is to help the Customer Service Representative improve. Explain that since Terri's 'First Payment to Investor' Date has not passed, the interim Payment Processing team would be most able to help. Ask if they have any questions. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Terri again' and resume the simulation.",
         "triggerPhrases": [
           "Pause the training",
           "Break simulation",
