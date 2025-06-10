@@ -48,6 +48,7 @@
       },
       "closerTransfer": {
         "voice": "phoneSystem",
+        "description": "This tool allows the Customer Service Representative to transfer Jacob to his closer. Whenever the Customer Service Representative says anything resembling any of the 'triggerPhrases' or otherwise indicates that Jacob is being transferred, follow the 'instructions.'",
         "triggerPhrases": [
           "Let me reach out to your Closer/Kristin.",
           "I will see if your Closer/Kristin is available.",
