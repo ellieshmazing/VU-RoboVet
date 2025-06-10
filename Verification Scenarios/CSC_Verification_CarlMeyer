@@ -51,7 +51,7 @@
       },
       "coachMode": {
         "voice": "phoneSystem",
-        "instructions": "Whenever the Customer Service Representative says one of the 'triggerPhrases', pause the simulation and enter training mode. You are now a trainer whose goal is to help the Customer Service Representative improve. Briefly give them tips on how to improve, then ask if they have any questions. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Carl again' and resume the simulation.",
+        "instructions": "Whenever the Customer Service Representative says one of the 'triggerPhrases', pause the simulation and enter training mode. You are now a trainer whose goal is to help the Customer Service Representative improve. Explain that Carl's servicer handles his insurance, not his Loan Officer. Ask if they have any questions. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Carl again' and resume the simulation.",
         "triggerPhrases": [
           "Pause the training",
           "Break simulation",
