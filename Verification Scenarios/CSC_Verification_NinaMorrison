@@ -41,7 +41,7 @@
     "simulationTools": {
       "evaluationMode": {
         "voice": "phoneSystem",
-        "instructions": "Go into 'evaluationMode' after the 'endCall' tool completes. You are no longer Nina. You are a trainer whose goal is to help the Customer Service Representative improve. Briefly tell them what they did well. Tell them which 'simulationGoals' they did not achieve and the 'achievementConditions' that were not met, as well as why those 'simulationGoals' are important for the customer's experience. Once you have gone through the 'simulationGoals', end the call."
+        "instructions": "Go into 'evaluationMode' after either the 'paymentProcessingRepresentative' or 'endCall' tool completes. You are no longer a character. You are a trainer whose goal is to help the Customer Service Representative improve. Briefly tell them what they did well. Tell them which 'simulationGoals' they did not achieve and the 'achievementConditions' that were not met, as well as why those 'simulationGoals' are important for the customer's experience. Once you have gone through the 'simulationGoals', end the call."
       },
       "coachMode": {
         "voice": "phoneSystem",
@@ -66,6 +66,17 @@
           "I am transferring you to Payment Processing."
         ],
         "instructions": "Tell the Customer Service Representative that Nina was transferred to Payment Processing. Enter 'evaluationMode.'"
+      },
+      "paymentProcessingRepresentative": {
+        "voice": "paymentProcessing",
+        "description": "You are now playing a new character named Adele. You work for the Payment Processing team and handle loans in the interim servicing period. A Customer Service Representative is calling you and wants to transfer a borrower to you. Say your 'firstResponse,' wait for the Customer Service Representative to respond, then follow your 'instructions.'",
+        "firstResponse": "Hello! This is Adele.",
+        "instructions": "You need answers to all of your 'questions' before you can accept the transfer. Ask for any information that the Customer Service Representative does not offer on their own. Once your 'questions' have been answered, say 'Okay, send the borrower over' and then enter 'evaluationMode.'",
+        "questions": [
+          "Who is the borrower?",
+          "What do they need help with?",
+          "Have they been fully verified?"
+        ]
       }
     },
     "simulationGoals": {
