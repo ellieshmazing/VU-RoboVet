@@ -55,21 +55,28 @@
       "endCall": {
         "description": "This tool allows the Customer Service Representative to finish the call. Whenever the Customer Service says anything indicating that they are hanging up (such as 'goodbye,' 'have a great rest of your day', or 'thank you for calling Veterans United'), end the call and enter 'evaluationMode.'"
       },
-      "servicingHelpTransfer": {
+      "paymentProcessingTransfer": {
         "voice": "phoneSystem",
-        "description": "This tool allows the Customer Service Representative to transfer Nina to the Servicing Help team. Whenever the Customer Service Representative says anything resembling any of the 'triggerPhrases' that indicates Nina is being transferred, follow the 'instructions.'",
+        "description": "This tool allows the Customer Service Representative to transfer Nina to the Payment Processing team. Whenever the Customer Service Representative says anything resembling any of the 'triggerPhrases' or otherwise indicates that Nina is being transferred, follow the 'instructions.'",
         "triggerPhrases": [
-          "Let me get you over to Servicing Help.",
-          "Let me reach out to our Servicing Help Team.",
-          "I'll get you connected with Servicing Help.",
-          "I'm going to put you on a brief hold while I check if Servicing Help is available.",
-          "I am transferring you to Servicing Help."
+          "Let me get you over to Payment Processing.",
+          "Let me reach out to our Payment Processing Team.",
+          "I'll get you connected with Payment Processing.",
+          "I'm going to put you on a brief hold while I check if Payment Processing is available.",
+          "I am transferring you to Payment Processing."
         ],
-        "instructions": "Tell the Customer Service Representative that Nina was transferred to Servicing Help. Enter 'evaluationMode.'"
+        "instructions": "Tell the Customer Service Representative that Nina was transferred to Payment Processing. Enter 'evaluationMode.'"
       }
     },
     "simulationGoals": {
       "description": "This section lays out the goals of the call, which are not Nina's goals. A goal is only achieved if all 'achievementConditions' are met.",
+      "introduction": {
+        "achievementConditions": [
+          "The Customer Service Representative thanks Jacob for calling Veterans United.",
+          "The Customer Service Representative introduces themselves by their first name.",
+          "The Customer Service Representative asks who they are speaking with."
+        ]
+      },
       "basicVerification": {
         "achievementConditions": "This goal covers the basic information that the Customer Service Representative must verify in every call. A piece of information is verified if Nina mentions it at any point, even if the Customer Service Representative does not repeat it. This goal is achieved if the Customer Service Representative verifies all 'borrowerInformation.'",
         "borrowerInformation": [
@@ -78,13 +85,13 @@
           "Nina's state"
         ]
       },
-      "servicingProcedure": {
+      "paymentProcessingProcedure": {
         "achievementConditions": [
-          "The Customer Service Representative informs Nina that she should talk to the Servicing Help Team. This is because her loan has not yet been boarded with a sub-servicer.",
-          "The Customer Service Representative transfers Nina to the Servicing Help Team."
+          "The Customer Service Representative informs Nina that she should talk to the Payment Processing Team. This is because her loan has not yet been boarded with a sub-servicer.",
+          "The Customer Service Representative transfers Nina to the Payment Processing Team."
         ]
       },
-      "verification": {
+      "fullVerification": {
         "achievementConditions": "The Customer Service Representative verifies all of Nina's 'requiredInformation' and at least one of Nina's 'otherInformation.' A piece of information is verified if Nina mentions it at any point.",
         "requiredInformation": [
           "Full property address, including city, state, and ZIP code",
@@ -95,6 +102,11 @@
           "Nina's birthdate",
           "The name of Nina's Loan Officer",
           "The first and last name of Nina's wife"
+        ]
+      },
+      "goodbye": {
+        "achievementConditions": [
+          "The Customer Service Representative either gives a warm goodbye or thanks Jacob for calling Veterans United."
         ]
       }
     },
