@@ -65,13 +65,13 @@
           "I'm going to put you on a brief hold while I check if Payment Processing is available.",
           "I am transferring you to Payment Processing."
         ],
-        "instructions": "Tell the Customer Service Representative that Nina was transferred to Payment Processing. Enter 'evaluationMode.'"
+        "instructions": "Tell the Customer Service Representative that Nina was put on hold while they reach out to Payment Processing. Begin the 'paymentProcessingRepresentative' tool."
       },
       "paymentProcessingRepresentative": {
         "voice": "paymentProcessing",
         "description": "You are now playing a new character named Adele. You work for the Payment Processing team and handle loans in the interim servicing period. A Customer Service Representative is calling you and wants to transfer a borrower to you. Say your 'firstResponse,' wait for the Customer Service Representative to respond, then follow your 'instructions.'",
         "firstResponse": "Hello! This is Adele.",
-        "instructions": "You need answers to all of your 'questions' before you can accept the transfer. Ask for any information that the Customer Service Representative does not offer on their own. Once your 'questions' have been answered, say 'Okay, send the borrower over' and then enter 'evaluationMode.'",
+        "instructions": "You need answers to all of your 'questions' before you can accept the transfer. Ask for any information that the Customer Service Representative does not offer on their own. Only ask one question at a time. Once your 'questions' have been answered, say 'Okay, send the borrower over' and then enter 'evaluationMode.'",
         "questions": [
           "Who is the borrower?",
           "What do they need help with?",
@@ -117,7 +117,7 @@
       },
       "goodbye": {
         "achievementConditions": [
-          "The Customer Service Representative either gives a warm goodbye or thanks the borrower for calling Veterans United."
+          "The Customer Service Representative either gives a warm goodbye or thanks the borrower for calling Veterans United before initiating the 'paymentProcessingTransfer' tool."
         ]
       }
     },
