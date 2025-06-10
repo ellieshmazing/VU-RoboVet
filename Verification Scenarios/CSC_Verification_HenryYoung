@@ -64,9 +64,9 @@
       "basicVerification": {
         "achievementConditions": "This goal covers the basic information that the Customer Service Representative must verify in every call. A piece of information is verified if the borrower mentions it at any point, even if the Customer Service Representative does not repeat it. This goal is achieved if the Customer Service Representative verifies all 'borrowerInformation.'",
         "borrowerInformation": [
-          "Nina's first name",
-          "Nina's last name",
-          "Nina's state"
+          "The borrower's first name",
+          "The borrower's last name",
+          "The borrower's state"
         ]
       },
       "servicingProcedure": {
