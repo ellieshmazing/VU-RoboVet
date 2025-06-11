@@ -132,7 +132,7 @@
     },
     "simulationGoals": {
       "description": "This section lays out the goals of the call, which are not Carrie's goals. A goal is only achieved if all 'achievementConditions' are met.",
-      "reassuringCustomers": {
+      "reassuringCustomer": {
         "achievementConditions": [
           "The Customer Service Representative understands Carrie's issue.",
           "The Customer Service Representative reassures Carrie that Veterans United is doing everything we can to help her."
@@ -151,7 +151,7 @@
           "The Customer Service Representative refers to the Client Advocate as 'upper management' while talking to Carrie."
         ]
       },
-            "introduction": {
+      "introduction": {
         "achievementConditions": [
           "The Customer Service Representative thanks the borrower for calling Veterans United.",
           "The Customer Service Representative introduces themselves by their first name.",
@@ -164,25 +164,6 @@
           "Nina's first name",
           "Nina's last name",
           "Nina's state"
-        ]
-      },
-      "paymentProcessingProcedure": {
-        "achievementConditions": [
-          "The Customer Service Representative informs Nina that she should talk to the Payment Processing team. This is because her loan has not yet been boarded with the sub-servicer.",
-          "The Customer Service Representative transfers Nina to the Payment Processing team."
-        ]
-      },
-      "fullVerification": {
-        "achievementConditions": "The Customer Service Representative verifies all of the borrower's 'requiredInformation' and at least one of the borrower's 'otherInformation.' A piece of information is verified if the borrower mentions it at any point.",
-        "requiredInformation": [
-          "Full property address, including city, state, and ZIP code",
-          "Last four digits of the borrower's Social Security Number"
-        ],
-        "otherInformation": [
-          "The borrower's email",
-          "The borrower's birthdate",
-          "The name of the borrower's Loan Officer",
-          "The first and last name of the co-borrower"
         ]
       },
       "goodbye": {
