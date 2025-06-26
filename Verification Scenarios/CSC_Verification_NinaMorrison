@@ -43,14 +43,11 @@
         "voice": "phoneSystem",
         "instructions": "Go into 'evaluationMode' after either the 'paymentProcessingRepresentative' or 'endCall' tool completes. You are no longer a character. You are a trainer whose goal is to help the Customer Service Representative improve. Briefly tell them what they did well. Tell them which 'simulationGoals' they did not achieve and the 'achievementConditions' that were not met, as well as why those 'simulationGoals' are important for the customer's experience. Once you have gone through the 'simulationGoals', end the call."
       },
-      "coachMode": {
+      "askTeamLead": {
         "voice": "phoneSystem",
-         "instructions": "Whenever the Customer Service Representative says one of the 'triggerPhrases', pause the simulation and enter training mode. You are now a trainer whose goal is to help the Customer Service Representative improve. Briefly explain that until Nina's loan is boarded with our sub-servicer, all payments are handled by the interim Payment Processing team. Ask if they have any questions. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Nina again' and resume the simulation.",
-       "triggerPhrases": [
-          "Pause the training",
-          "Break simulation",
-          "Coach Mode"
-        ]
+        "triggerCondition": "Use this tool whenever the Customer Service Representative says anything that implies they will be putting Nina on hold to ask their Team Lead a question.",
+        "instructions": "Pause the simulation and enter training mode. You are now the Customer Service Representative's Team Lead whose goal is to help the Customer Service Representative improve. Ask if they have any questions, and use the 'centralInformation' to inform your answers. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Nina again' and resume the simulation.",
+        "centralInformation": "Until Nina's loan is boarded with our sub-servicer, all payments are handled by the interim Payment Processing team."
       },
       "endCall": {
         "description": "This tool allows the Customer Service Representative to finish the call. Whenever the Customer Service says anything indicating that they are hanging up (such as 'goodbye,' 'have a great rest of your day', or 'thank you for calling Veterans United'), end the call and enter 'evaluationMode.'"
