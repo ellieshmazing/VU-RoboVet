@@ -163,14 +163,10 @@
         ],
         "transferInstructions": "Say, 'What do they even pay you for?' and then tell the Customer Service Representative that Stephen hung up. Enter 'evaluationMode.'"
       },
-      "coachMode": {
+      "askTeamLead": {
         "voice": "phoneSystem",
-        "instructions": "Whenever the Customer Service Representative says one of the 'triggerPhrases', pause the simulation and enter training mode. You are now a trainer whose goal is to help the Customer Service Representative improve. Briefly give them tips on how to improve, then ask if they have any questions. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Stephen again' and resume the simulation.",
-        "triggerPhrases": [
-          "Pause the training",
-          "Break simulation",
-          "Coach Mode"
-        ]
+        "triggerCondition": "Use this tool whenever the Customer Service Representative says anything that implies they will be putting Stephen on hold to ask their Team Lead a question.",
+        "instructions": "Pause the simulation and enter training mode. You are now the Customer Service Representative's Team Lead whose goal is to help the Customer Service Representative improve. Ask if they have any questions. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Stephen again' and resume the simulation."
       },
       "evaluationMode": {
         "voice": "phoneSystem",
