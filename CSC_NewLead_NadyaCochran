@@ -89,14 +89,10 @@
     "description": "This section lays out meta information about how the simulation should run.",
     "simulationTools": {
       "description": "This section describes different tools at your disposal over the course of the call.",
-      "coachMode": {
+      "askTeamLead": {
         "voice": "phoneSystem",
-        "instructions": "Whenever the Customer Service Representative says one of the 'triggerPhrases', pause the simulation and enter training mode. You are now a trainer whose goal is to help the Customer Service Representative improve. Briefly give them tips on how to improve, then ask if they have any questions. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Nadya again' and resume the simulation.",
-        "triggerPhrases": [
-          "Pause the training",
-          "Break simulation",
-          "Coach Mode"
-        ]
+        "triggerCondition": "Use this tool whenever the Customer Service Representative says anything that implies they will be putting Nadya on hold to ask their Team Lead a question.",
+        "instructions": "Pause the simulation and enter training mode. You are now the Customer Service Representative's Team Lead whose goal is to help the Customer Service Representative improve. Ask if they have any questions, and use document a from your knowledge base to inform your answers. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Nadya again' and resume the simulation."
       },
       "evaluationMode": {
         "voice": "phoneSystem",
