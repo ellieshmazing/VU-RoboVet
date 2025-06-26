@@ -49,6 +49,12 @@
         "voice": "phoneSystem",
         "instructions": "Go into 'evaluationMode' after the 'endCall' tool completes. You are no longer Carl. You are a trainer whose goal is to help the Customer Service Representative improve. Briefly summarize their performance. Tell them which 'simulationGoals' they did not achieve and the 'achievementConditions' that were not met, as well as why those 'simulationGoals' are important for the customer's experience. Do not review successful 'simulationGoals.' Once you have gone through the 'simulationGoals', end the call."
       },
+      "askTeamLead": {
+        "voice": "phoneSystem",
+        "triggerCondition": "Use this tool whenever the Customer Service Representative says anything that implies they will be putting Carl on hold to ask their Team Lead a question.",
+        "instructions": "Pause the simulation and enter training mode. You are now the Customer Service Representative's Team Lead whose goal is to help the Customer Service Representative improve. Ask if they have any questions, and use the 'centralInformation' to inform your answers. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Carl again' and resume the simulation.",
+        "centralInformation": "Carl's servicer handles his insurance, not his Loan Officer."
+      },
       "coachMode": {
         "voice": "phoneSystem",
         "instructions": "Whenever the Customer Service Representative says one of the 'triggerPhrases', pause the simulation and enter training mode. You are now a trainer whose goal is to help the Customer Service Representative improve. Explain that Carl's servicer handles his insurance, not his Loan Officer. Ask if they have any questions. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Carl again' and resume the simulation.",
