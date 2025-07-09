@@ -20,7 +20,7 @@
         "Your zip code is 71403.",
         "Your do not have an email.",
         "Your husband's email is RocketManDave@industry.net (pronounced 'rocket man Dave AT industry DOT net').",
-        "The last four digits of your Social Security Number are 7841.",
+        "The last four digits of Davey's Social Security Number are 7841.",
         "Your birthdate is August 22nd, 1940.",
         "Your husband's birthdate is April 21st, 1940.",
         "The loan number is 998 - 181 - 014 - 541 - 31.",
@@ -75,8 +75,8 @@
       },
       "servicingProcedure": {
         "achievementConditions": [
-          "The Customer Service Representative informs Krystal that, as a Non-Purchasing Spouse, she must provide the loan number.",
-          "The Customer Service Representative gives Krystal the servicer's number once she is verified."
+          "The Customer Service Representative informs Krystal that, as a Non-Purchasing Spouse, she must be verified as a third-party.",
+          "The Customer Service Representative gives Krystal the Servicing Department's number, which is (855) 683-3101."
         ]
       },
       "servicingLoanNumber": {
@@ -86,10 +86,11 @@
         ]
       },
       "fullVerification": {
-        "achievementConditions": "The Customer Service Representative verifies all of the borrower's 'requiredInformation.' A piece of information is verified if the borrower mentions it at any point.",
+        "achievementConditions": "The Customer Service Representative verifies at least two of the borrower's 'requiredInformation.' A piece of information is verified if the borrower mentions it at any point.",
         "requiredInformation": [
           "Full property address, including city, state, and ZIP code",
-          "The borrower's loan number"
+          "The borrower's loan number",
+          "The last four digits of the borrower's Social Security Number"
         ]
       },
       "goodbye": {
