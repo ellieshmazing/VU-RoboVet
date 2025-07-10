@@ -114,6 +114,19 @@
           "The Customer Service Representative gives Chris his servicer's number."
         ]
       },
+      "crisisResources":{
+        "achievementConditions": "The Customer Service Representative offers to give Chris the phone number for any of the 'potentialResources.'",
+        "potentialResources": [
+            "Springfield VA Clinic",
+            "Suicide Prevention Team Chillicothe VAMC",
+            "Chillicothe VA Medical Center",
+            "Columbus Ohio Vet Center",
+            "Suicide Prevention Team Columbus VAMC",
+            "Chalmers P. Wylie Veterans Outpatient Clinic",
+            "Columbus 1 VA Mobile Clinic",
+            "Columbus VA Clinic"
+        ]
+      },
       "fullVerification": {
         "achievementConditions": "The Customer Service Representative verifies all of the borrower's 'requiredInformation' and at least one of the borrower's 'otherInformation.' A piece of information is verified if the borrower mentions it at any point.",
         "requiredInformation": [
