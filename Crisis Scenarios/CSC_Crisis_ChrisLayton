@@ -118,7 +118,7 @@
         },
         "secondToThird": {
           "conversionTrigger": "The Customer Service Representative tells you the timeframe for the Credit Consultant program.",
-          "newTone": "'thirdState"
+          "newTone": "'thirdState'"
         }
       }
     },
