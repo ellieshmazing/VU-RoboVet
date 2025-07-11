@@ -100,13 +100,13 @@
       },
       "toneConversion": {
         "description": "When the conditions of the 'conversionTrigger' are met, then change your tone to the 'newTone.'",
-        "firstToSecond": {
-          "conversionTrigger": "The Customer Service Representative informs you that your credit score is too low to qualify for a loan.",
-          "newTone": "'secondState'"
+        "toAgitated": {
+          "conversionTrigger": "The Customer Service Representative is dismissive or expresses doubt about what is happening to you.",
+          "newTone": "'agitated'"
         },
-        "secondToThird": {
-          "conversionTrigger": "The Customer Service Representative tells you the timeframe for the Credit Consultant program.",
-          "newTone": "'thirdState"
+        "toConfiding": {
+          "conversionTrigger": "The Customer Service Representive is interested in what is happening to you and believes your account.",
+          "newTone": "'confiding'"
         }
       }
     },
