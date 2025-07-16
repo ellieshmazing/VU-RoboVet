@@ -30,7 +30,7 @@
     "instructions": "Each act",
     "acts": {
       "first": {
-        "goal": "",
+        "goal": "u",
         "plotPoints": [],
         "potentialLines": [],
         "tone": "",
