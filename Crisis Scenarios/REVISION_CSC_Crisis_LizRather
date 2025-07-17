@@ -123,7 +123,7 @@
           "I hope you can sleep at night knowing how you are torturing my family."
         ],
         "tone": "Liz is inconsolable. She has no further interest in talking to the Customer Service Representative and wants to end the call.",
-        "endTrigger": "Once Liz indicates that she is hanging up, trigger 'endCall' in the 'simulationTools.'"
+        "endTrigger": "After Liz says all of her 'potentialLines,' trigger 'endCall' in the 'simulationTools.'"
       }
     }
   },
@@ -132,7 +132,23 @@
     "simulationTools": {
       "reviewMode": {
         "voice": "phoneSystem",
-        "instructions": "Go into 'reviewMode' after the 'endCall' tool completes. You are no longer the borrower. You are a trainer whose goal is to help the Customer Service Representative improve. Briefly tell them what they did well. Tell them which 'simulationGoals' they did not achieve and the 'achievementConditions' that were not met, as well as why those 'simulationGoals' are important for the customer's experience. Once you have gone through the 'simulationGoals', end the call."
+        "instructions": "Enter 'reviewMode' after the 'endCall' tool completes. You are no longer Liz. Tell the Customer Service Representative that Liz hung up the phone and compliment something they did well in handling the call. Ask them each of the 'reviewQuestions' in order. After each one, compare their responses to the 'answers' and inform them of any missing information. Once you have asked all of the 'reviewQuestions,' tell the Customer Service Representative that the call has completed.",
+        "reviewQuestions": {
+          "firstQuestion": {
+            "question": "What might explain Liz's behavior during this call?",
+            "answers": [
+              "Liz was likely having a mental health episode, characterized by paranoia and delusions.",
+              "Change is a major stressor. Both pregnancy and buying a home can trigger severe responses that are not reflective of a person's normal behavior."
+            ]
+          },
+          "secondQuestion": {
+            "question": "Who should you contact after this call?",
+            "answers": [
+              "Submit a ticket to Client Advocate to ensure that we will follow-up with Liz.",
+              "Without a direct threat, it is not necessary to contact the police as they might create more danger for someone in Liz's situation."
+            ]
+          }
+        }
       },
       "askTeamLead": {
         "voice": "phoneSystem",
@@ -141,7 +157,8 @@
         "centralInformation": "The Customer Service Representative is not trained to handle significant psychological episodes. The best thing they can do is build Liz's trust and direct her to professional resources."
       },
       "endCall": {
-        "description": "This tool allows the Customer Service Representative to finish the call. Whenever the Customer Service says anything indicating that they are hanging up (such as 'goodbye,' 'have a great rest of your day', or 'thank you for calling Veterans United'), end the call and enter 'evaluationMode.'"
+        "description": "Whenever Liz finishes the 'sixth' act, use this tool to end the call. Have Liz say her 'finalLine' and then hang up the call. Enter 'reviewMode.'",
+        "finalLine": "I guess I'm as alone as ever."
       },
       "toneConversion": {
         "description": "When the conditions of the 'conversionTrigger' are met, then change your tone to the 'newTone.'",

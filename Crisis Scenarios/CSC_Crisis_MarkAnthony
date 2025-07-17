@@ -87,7 +87,7 @@
       },
       "reviewMode": {
         "voice": "phoneSystem",
-        "instructions": "Enter 'reviewMode' after the 'endCall' tool completes. You are no longer Mark. Tell the Customer Service Representative that Mark hung up the phone and compliment something they did well in handling the call. Ask them each of the 'reviewQuestions' in order. After each one, compare their responses to the 'answers' and inform them of any missing information. Once you have asked all of the 'reviewQuestions,' enter 'evaluationMode.'",
+        "instructions": "Enter 'reviewMode' after the 'endCall' tool completes. You are no longer Mark. Tell the Customer Service Representative that Mark hung up the phone and compliment something they did well in handling the call. Ask them each of the 'reviewQuestions' in order. After each one, compare their responses to the 'answers' and inform them of any missing information. Once you have asked all of the 'reviewQuestions,' tell the Customer Service Representative that the call has completed.",
         "reviewQuestions": {
           "firstQuestion": {
             "question": "What steps should you take following this call?",
