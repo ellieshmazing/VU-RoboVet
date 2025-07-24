@@ -144,8 +144,8 @@
           "secondQuestion": {
             "question": "Who should you contact after this call?",
             "answers": [
-              "Submit a ticket to Client Advocate to ensure that we will follow-up with Liz.",
-              "Without a direct threat, it is not necessary to contact the police as they might create more danger for someone in Liz's situation."
+              "Submit a ticket to Client Advocate to ensure that we will follow-up about this situation.",
+              "Since Liz made direct threats against those around her, you should contact the police. To protect Liz's safety as much as possible, make sure to explain that she is in need of medical help, not imprisonment."
             ]
           }
         }
