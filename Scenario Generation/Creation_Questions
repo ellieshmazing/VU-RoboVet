@@ -4,7 +4,7 @@
     "question": "What kind of scenario do you want to make?",
     "potentialAnswers": {
       "Crisis": {
-        "referenceFile": "Crisis_Scenarios",
+        "referenceFile": "Format your scenario similar to those in the file Crisis_Scenarios",
         "specialRequirements": "Instead of ending with evaluationMode, crisis scenarios have reviewMode.",
         "clarifyingQuestions": {
           "first": {
@@ -26,15 +26,32 @@
                   }
                 },
                 "others": {
-                    "first": {
-                        "question": "Who are they threatening?"
-                    },
-                    "second": {
-                        "question": "How immediate or realistic is the threat? Does it appear to be a legitimate threat or a frustrated comment?"
-                    }
+                  "first": {
+                    "question": "Who are they threatening?"
+                  },
+                  "second": {
+                    "question": "How immediate or realistic is the threat? Does it appear to be a legitimate threat or a frustrated comment?"
+                  }
                 }
               }
             }
+          }
+        }
+      },
+      "Verification": {
+        "referenceFile": "Format your scenario similar to those in the file Verification_Scenarios.",
+        "specialRequirements": "Verification scenarios require a verificationInfo section for the borrower.",
+        "clarifyingQuestions": {
+          "first": {
+            "question": "Who is the borrower's servicer?",
+            "options": {
+              "veteransUnited": "If Veterans United is servicing the loan, then it must be in the interim period before being boarded.",
+              "mrCooper": "Mr. Cooper is Veterans United's sub-servicer, handling loans owned by Veterans United",
+              "other": "All other servicers are independent from Veterans United."
+            }
+          },
+          "second": {
+            "question": "Why is the borrower calling?"
           }
         }
       }
