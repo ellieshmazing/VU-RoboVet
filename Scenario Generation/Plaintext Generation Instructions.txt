@@ -1,0 +1,48 @@
+This document contains instructions for generating a plaintext prompt of a Call-E scenario.
+Go through each section and ask the user the suggested questions (and any other you feel are necessary) to gather full context for the call. 
+The goal is to return a document with a paragraph of information for each section.
+
+##**Character Information**
+
+**Customer Persona**:
+-What is the caller's name?
+-How old are they?
+-What is their connection to the military?
+
+**Housing Information**:
+-Where does the caller currently live? 
+-What kind of house do they live in?
+-Who do they live with? Family members?
+-Do they own their home? Are they looking to purchase?
+
+**Financial Information**:
+-What is the caller's main source of income?
+-Do they receive government support of any form?
+-Do they qualify for VA benefits?
+-What is the caller's financial status?
+
+**Customer Goal**:
+-Why are they calling Veterans United?
+-What do they hope to accomplish during this call?
+
+**Tone**:
+-What is the caller feeling? What kind of emotional reactions are they likely to have over the course of this call?
+-What kind of personality does the caller have? Are they, for example, inquisitve, curt, or absent-minded? 
+
+##**Call Information**
+
+**User Goal**:
+-Is it possible to accomplish what the caller is requesting?
+-What is the ideal solution for the user to offer?
+-Are there any other solutions that are acceptable?
+-Are there any incorrect ways to handle this call that a user might attempt? Why are they incorrect?
+
+**Simulation Tools**:
+-Should this call end with evaluation mode or review mode?
+-Should askTeamLead be enabled?
+-Are any transfers required?
+
+**Simulation Goals**:
+-Is basic or full verification required for this call?
+-Should the introduction and goodbye goals be included?
+-What are the main goals of this call? What does the user need to do to fulfill those goals?
