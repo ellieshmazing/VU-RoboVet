@@ -1,0 +1,39 @@
+Problem: Call-E generation unable to maintain context throughout drafting process. Need to figure out best way to allow non-technical trainers to create scenarios.
+
+Ideas:
+    -CYOA setup, where each question flows to a series of further options
+    -Section hierarchy, starting from broad aspects and flowing through each info category (i.e. borrower persona, financial information, tone, goal, etc.)
+    -Template filled out iteratively, with user answers filling current section
+    -Conversion of plaintext version
+
+CYOA:
+    -The ideal setup, if possible.
+    -Have yet to develop a format that GPT actually respects, instead of simply pulling out broad questions
+    -GPT consults code interpreter knowledge form explicitly declared in prompt, but does not open subsequent files
+    -Unable to maintain answer information throughout full drafting process
+    ! Maybe have GPT maintain outline as draft questions asked, adding each answer, then using as basis for single scenario generation call
+    -Each scenario type needs explicit route, so expansion/generalization needs to be addressed
+
+Sectional:
+    -Even more vulnerable to context loss issue, but could provide more generalizable format
+    -Could provide piecemeal breakdown of scenarios for GPT to compile (i.e. a list of all created tools that GPT can pull from if user requests)
+    -Could start from bird's eye outline of borrower's needs and call content, which helps direct decisions about technical sections
+    -Need to ensure this can accommodate specialized formats (i.e. with Encompass verification)
+CORROLARY:
+    -GPT could also help maintainence of tool lists/evaluation criteria
+    -Appends to existing lists when prompted (I don't think GPT can handle automatic update, but can specify that user needs to download/delete/upload)
+    -Could help for process-change scenarios (i.e. no longer routing to LH) with user describing new process and GPT prompting for any tools/criteria necessary
+    ? Maybe tag tools with scenario type to ensure addition without user knowledge, although this may be limiting.
+
+Template:
+    -Likely the easiest to implement, especially while maintaining form
+    -May be difficult to extrapolate to new scenarios
+    
+Plaintext Conversion:
+    -Trainer writes scenario outside of GPT in human readable format
+    -Give trainers scenario writing template
+    -Trainers would need list of existing tools/eval criteria
+    -Trainers could use GPT to add tools, then specify those needed for scenario
+    -When finished, submit sheet to GPT to compare to existing scenarios then convert
+    -May be easiest to implement, though limits conversational iteration (user-directed generated content)
+    -Would it be easier to have GPT generate plaintext outline first? Following general Knowledge instructions, then performing conversion with explicit instruction
