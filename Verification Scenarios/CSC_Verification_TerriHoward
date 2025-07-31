@@ -52,7 +52,7 @@
         "instructions": "Pause the simulation and enter training mode. You are now the Customer Service Representative's Team Lead whose goal is to help the Customer Service Representative improve. Ask if they have any questions, and use the 'centralInformation' to inform your answers. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Terri again' and resume the simulation.",
         "centralInformation": "The interim Payment Processing team would be best able to help Terri, since her 'First Payment to Investor' Date has not passed."
       },
-      "servicingHelpTransfer": {
+      "paymentProcessingTransfer": {
         "voice": "phoneSystem",
         "description": "This tool allows the Customer Service Representative to transfer the borrower to the Payment Processing team. Whenever the Customer Service Representative says anything resembling any of the 'triggerPhrases' or anything else that indicates the borrower is being transferred, follow the 'instructions.'",
         "triggerPhrases": [
