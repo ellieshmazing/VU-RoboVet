@@ -28,4 +28,6 @@ SECTIONS:
 
 4. Call Flow: This section helps to determine the desired trajectory of the call. How can the Customer Service Representative help the caller? What is the correct procedure? Are there any other ways to help the caller? Are there any incorrect ways to handle the call that may be likely? 
 
-5. Evaluation Criteria: This sections lays out the criteria by which to evaluate the Customer Service Representative's performance. Is basic or full verification required? What procedural skills should they demonstrate? What customer service skills does this caller challenge? 
+5. End States: This section lays out conditions for the call to end, either by transferring the caller, the caller hanging up, or the CSR hanging up. Each of those options require the inclusion of a tool to facilitate those actions. How should the call end if the procedure is followed successfully? What conditions trigger that ending, whether specific lines or caller emotions? How else can the call end? How should the call end if the CSR does not follow procedure? What conditions trigger that ending, whether specific lines or caller emotions?
+
+6. Evaluation Criteria: This sections lays out the criteria by which to evaluate the Customer Service Representative's performance. Is basic or full verification required? What procedural skills should they demonstrate? What customer service skills does this caller challenge? 
