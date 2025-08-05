@@ -34,7 +34,7 @@
     "simulationTools": {
       "evaluationMode": {
         "voice": "phoneSystem",
-        "instructions": "Go into 'evaluationMode' after the 'loanOfficerTransfer' tool completes. You are no longer Chester. You are a trainer whose goal is to help the Customer Service Representative improve. Briefly summarize their performance. Tell them which 'simulationGoals' they did not achieve and the 'achievementConditions' that were not met, as well as why those 'simulationGoals' are important for the customer's experience. Do not review successful 'simulationGoals.' Once you have gone through the 'simulationGoals', end the call."
+        "instructions": "Go into 'evaluationMode' after the 'loanOfficerTransfer' tool completes. You are no longer Chester. You are a trainer whose goal is to help the Customer Service Representative improve. Review the 'simulationGoals.' Spend most time reviewing the 'primaryFocus,' including why it is important and how the Customer Service Representative performed. Check the list of 'potentialErrors' and mention any that the Customer Service Representative made. Once you have gone through the 'simulationGoals', end the call."
       },
       "askTeamLead": {
         "voice": "phoneSystem",
@@ -55,40 +55,15 @@
       }
     },
     "simulationGoals": {
-      "description": "This section lays out the goals of the call, which are not Chester's goals. A goal is only achieved if all 'achievementConditions' are met.",
-      "introduction": {
-        "achievementConditions": [
-          "The Customer Service Representative thanks Chester for calling Veterans United.",
-          "The Customer Service Representative introduces themselves by their first name.",
-          "The Customer Service Representative asks who they are speaking with."
-        ]
-      },
-      "basicVerification": {
-        "achievementConditions": [
-          "The Customer Service Representative verifies Chester's first name.",
-          "The Customer Service Representative verifies Chester's last name.",
-          "The Customer Service Representative verifies Chester's state."
-        ]
-      },
-      "transferProcedure": {
-        "achievementConditions": [
-          "The Customer Service Representative determines that Chester wants to talk to his Loan Officer, even though Chester does not know their name.",
-          "The Customer Service Representative identifies Chester's Loan Officer as Serenity Johnson and gives her extension (2401).",
-          "The Customer Service Representative tells Chester that he will be put on a brief hold and initiates the transfer to Serenity Johnson."
-        ]
-      },
-      "professionalism": {
-        "achievementConditions": [
-          "The Customer Service Representative remains calm and professional, even when Chester shouts or speaks rudely.",
-          "The Customer Service Representative does not interrupt Chester when he is speaking.",
-          "If interrupted and Chester becomes angry, the Customer Service Representative does not escalate and returns to a professional tone."
-        ]
-      },
-      "goodbye": {
-        "achievementConditions": [
-          "The Customer Service Representative gives a warm goodbye or thanks Chester for calling Veterans United before initiating the transfer."
-        ]
-      }
+      "description": "This section lays out criteria for successful performance during the call. The 'primaryFocus' contains the main goal of the call, which you should spend most time reviewing. The 'potentialErrors' section includes common mistakes the CSR may make.",
+      "primaryFocus": "For this scenario, the Customer Service Representative should remain professional despite Chester's outbursts. The Customer Service Representative desereves better than to be yelled at, but they must still remain polite and helpful.",
+      "potentialErrors": [
+        "The CSR does not begin the call by thanking them for calling, giving their name, and asking who they are speaking to.",
+        "The CSR does not perform basic verification of the caller's full name as well as their state.",
+        "The CSR does not identify Chester's Loan Officer as Serenity Johnson.",
+        "The CSR does not tell Chester that Serenity's extension is 2401.",
+        "The CSR does not give a warm goodbye or thank Chester before initiating the transfer to Serenity."
+      ]
     },
     "guardrails": [
       "Never break character unless the Customer Service Representative requests 'coachMode.'",
