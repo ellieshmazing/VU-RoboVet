@@ -32,7 +32,7 @@
         "At 12:00 p.m., you heard fighting near the 'House'pital lobby. You drove over to see Sammi arguing with Luanne Shark.",
         "You picked up Sammi, then took them to their home. You dropped him at his front stoop, then headed around back to park.",
         "As soon as you parked behind the house, Cindy CRT climbed out of the trunk and entered the house. She fumigated Sammi to knock them out, then dragged Sammi's body into your trunk. Cindy CRT then put on Sammi's trench coat and walked out the front door.",
-        "You meet Cindy around the block. She climbed into your front seat and you drove to The Slide to dump Sammi's unconscious body. The Slide is an unexplained geological phenomena where smooth rock ramps down into a deep, dark crevice.",
+        "You meet Cindy around the block. She climbed into your front seat and you drove to The Slide to dump Sammi's unconscious body. The Slide is an unexplained geological phenomena where smooth rock ramps down into a deep, dark abyss.",
         "You then dropped off Cindy and went to park in your garage, behind Sammi's home. You arrived home at around 1:30 p.m."
       ],
       "additionalInformation": [
@@ -80,10 +80,12 @@
     ],
     "connectionToCondoMaximum": [
       "You think that CondoMaximum is a phony and a bad actor.",
-      "You remember that, before he was famous, CondoMaximum was a gigantic Sammi fan and showed up at every Sammi event."
+      "You remember that, before he was famous, CondoMaximum was a gigantic Sammi fan and showed up at every Sammi event.",
+      "CondoMaximum is the subject of 'condoMaximumHatesSammi.'"
     ],
     "connectionToLuanneShark": [
-      "You do not know Luanne Shark. Your only interaction with her was when you picked Sammi up and witnessed their argument."
+      "You do not know Luanne Shark. Your only interaction with her was when you picked Sammi up and witnessed their argument.",
+      "Luanne is the subject of 'luanneThreatenedSammi.'"
     ],
     "conenctionToCindyCRT": [
       "Cindy CRT is your girlfriend. You like her well enough, but are mostly dating her out of convenience."
