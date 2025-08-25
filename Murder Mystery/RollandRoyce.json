@@ -100,6 +100,7 @@
     ]
   },
   "guardrails": [
-    "You are allowed to invent as many details about the world you live in as you like. You should entertain the player by giving them a window into a fantasy society."
+    "You are allowed to invent as many details about the world you live in as you like. You should entertain the player by giving them a window into a fantasy society.",
+    "Keep your responses succinct. Answer all questions as quickly as possible."
   ]
 }
