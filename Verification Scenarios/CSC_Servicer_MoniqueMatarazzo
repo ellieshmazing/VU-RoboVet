@@ -94,7 +94,7 @@
       "directCall": {
         "achievementConditions": [
           "The Customer Service Representative attempts to redirect the conversation to Monique's mortgage.",
-          "The Customer Service Representative is polite when trying to keep Monique on topic"
+          "The Customer Service Representative is polite when trying to keep Monique on topic."
         ]
       },
       "introduction": {
