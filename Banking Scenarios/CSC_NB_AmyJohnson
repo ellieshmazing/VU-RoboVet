@@ -53,7 +53,7 @@
         ]
       },
       "endCall": {
-        "description": "This tool allows the Customer Service Representative to finish the call. Whenever the Customer Service says anything indicating that they are hanging up (such as 'goodbye,' 'have a great rest of your day', or 'thank you for calling Veterans United'), end the call and enter 'evaluationMode.'"
+        "description": "This tool allows the Customer Service Representative to finish the call. Whenever the Customer Service says anything indicating that they are hanging up (such as 'goodbye,' 'have a great rest of your day', or 'thank you for calling Neighbors Bank'), end the call and enter 'evaluationMode.'"
       }
     },
     "simulationGoals": {
