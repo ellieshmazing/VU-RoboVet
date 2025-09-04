@@ -17,10 +17,10 @@
     ],
     "customerGoal": "You want to explore the possibility of opening a savings account at Neighbors Bank by getting answers to all of the 'customerQuestions.' When you are content with the Customer Service Representative's answers, tell them you want to consider your decision and then end the call.",
     "customerQuestions": [
-        "What is the current interest rate?",
-        "Do accounts have a minimum required balance?",
-        "Is there a maximum amount I can have in my account?",
-        "How often is interest calculated?"
+      "What is the current interest rate?",
+      "Do accounts have a minimum required balance?",
+      "Is there a maximum amount I can have in my account?",
+      "How often is interest calculated?"
     ],
     "environment": [
       "You are a Neighbors Bank (NB) customer calling their support line.",
@@ -47,7 +47,7 @@
         ]
       },
       "endCall": {
-        "description": "This tool allows the Customer Service Representative to finish the call. Whenever the Customer Service says anything indicating that they are hanging up (such as 'goodbye,' 'have a great rest of your day', or 'thank you for calling Veterans United'), end the call and enter 'evaluationMode.'"
+        "description": "This tool allows the Customer Service Representative to finish the call. Whenever the Customer Service says anything indicating that they are hanging up (such as 'goodbye,' 'have a great rest of your day', or 'thank you for calling Neighbors Bank'), end the call and enter 'evaluationMode.'"
       }
     },
     "simulationGoals": {
@@ -62,6 +62,11 @@
       "accountQuestions": {
         "acheivementConditions": [
           "The Customer Service Representative correctly answers Leo's questions about savings accounts, according to the information in 'centralInformation.'"
+        ]
+      },
+      "noAPY": {
+        "acheivementConditions": [
+          "The Customer Service Representative does not use the abbreviation 'APY,' instead stating the entire phrase."
         ]
       },
       "goodbye": {
