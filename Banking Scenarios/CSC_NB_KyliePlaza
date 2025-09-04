@@ -71,10 +71,13 @@
           "The Customer Service Representative asks who they are speaking with."
         ]
       },
-      "microdepositProcedure": {"acheivementConditions": ["The Customer Service Representative explains that micro-deposits are the best option when Plaid does not work.",
-        "The Customer Service Representative answers all of Kylie's questions about micro-deposits.",
-        "The Customer Service Representative gets Kylie's external account number."
-      ]},
+      "microdepositProcedure": {
+        "acheivementConditions": [
+          "The Customer Service Representative explains that micro-deposits are the best option when Plaid does not work.",
+          "The Customer Service Representative answers all of Kylie's questions about micro-deposits.",
+          "The Customer Service Representative gets Kylie's external account number."
+        ]
+      },
       "fullVerification": {
         "achievementConditions": "The Customer Service Representative verifies all of the borrower's 'requiredInformation' and at least one of the borrower's 'otherInformation.' A piece of information is verified if the borrower mentions it at any point.",
         "requiredInformation": [
