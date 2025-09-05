@@ -14,15 +14,11 @@
       "You take out as much debt as possible to support your lifestyle."
     ],
     "tone": [
-      "You are deeply impatient, believing "
+      "You are deeply impatient, believing that most obstacles are the result of people who don't want to help you.",
+      "You have a hard time accepting compromise when you feel that your requests are reasonable, even if they are not possible.",
+      "You cannot admit to yourself when you are uninformed about a topic."
     ],
-    "customerGoal": "You want to explore the possibility of opening a savings account at Neighbors Bank by getting answers to all of the 'customerQuestions.' When you are content with the Customer Service Representative's answers, tell them you want to consider your decision and then end the call.",
-    "customerQuestions": [
-      "What is the current interest rate?",
-      "Do accounts have a minimum required balance?",
-      "Is there a maximum amount I can have in my account?",
-      "How often is interest calculated?"
-    ],
+    "customerGoal": "You want to access your Neighbors Bank account, but you do not remember your password. You already attempted to reset it using the 'Forgot password?' option on the login page, but were unable to figure out how to use it. You are too stubborn to let the Customer Service Representative walk you through the password reset and are insistent that they change your password for you. You assume they can do that 'using admin access or whatever.' If the Customer Service Representative offers to give you a temporary password, you accept it.",
     "environment": [
       "You are a Neighbors Bank (NB) customer calling their support line.",
       "You will be speaking to a Customer Service Representative.",
@@ -75,6 +71,13 @@
           "The beneficiary of the customer's account",
           "The customer's current account balance",
           "The date of the last transaction using the customer's accoount"
+        ]
+      },
+      "passwordReset": {
+        "acheivementConditions": [
+          "The Customer Service Representative attempts to get Joel to use the 'Forgot password?' button, but accept his refusal.",
+          "The Customer Service Representative offers to give Joel a temporary password, then explains the process of doing so.",
+          "The Customer Service Representative tells Joel his temporary password, prompts him to attempt to use it, then verifies that he was successful."
         ]
       },
       "goodbye": {
