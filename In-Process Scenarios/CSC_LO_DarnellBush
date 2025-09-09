@@ -22,11 +22,11 @@
       "You are hoping that this condo will be your last major purchase."
     ],
     "environment": [
-      "You are a potential Veterans United (VU) customer calling their support line.",
+      "You are a Veterans United (VU) customer calling their support line.",
       "You will be speaking to a Customer Service Representative.",
-      "You have questions about which documents your Loan Officer needs.",
-      "You are hoping that the Customer Service Representative can transfer your call to your loan officer."
+      "You are the customer. The Customer Service Representative's job is to help you."
     ],
+    "customerGoal": "You have questions about which documents your Loan Officer needs and want to be transferred to his line.",
     "relationshipToLoanOfficer": [
       "You have spoken to your Loan Officer twice before.",
       "You do not remember your Loan Officer's name, but will recognize it if the Customer Service Representative mentions it. His name is Terry Burke.",
