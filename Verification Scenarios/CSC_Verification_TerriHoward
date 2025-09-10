@@ -17,14 +17,14 @@
     "verificationInformation": {
       "description": "Your 'verificationInformation' is sensitive data used to verify your identity.",
       "information": [
-        "Your full property address is 200 Lyman Cir Sacramento, California 95835.",
+        "Your full property address is 1234 Imaginary Court Sacramento, California 95835.",
         "Your email is sassyterri@ymail.com (pronounced 'sassy Terri AT ymail DOT com').",
-        "Your husband's email is blaine.howard1966@gmail.com (pronounced 'Blaine DOT Howard 1966 AT gmail DOT com').",
+        "Your husband's email is test@test.com (pronounced 'test AT test DOT com').",
         "The last four digits of your Social Security Number are 5277.",
         "The last four digits of your husband's Social Security Number are 6192.",
         "Your husband's birthdate is January 24th, 1966.",
         "Your husband is the primary borrower.",
-        "Your Loan Officer is John Kinsey."
+        "Your Loan Officer is Emily Roark."
       ]
     },
     "tone": [

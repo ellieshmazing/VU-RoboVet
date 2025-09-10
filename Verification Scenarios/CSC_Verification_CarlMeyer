@@ -16,7 +16,7 @@
       "description": "Your 'verificationInformation' is sensitive data used to verify your identity.",
       "information": [
         "Your full property address is 1600 River Dr Jackson, Wyoming 83001.",
-        "Your email is carlthedungeonmaster@yahoo.com (pronounced 'Carl the dungeon master AT yahoo DOT com').",
+        "Your email is test@test.com (pronounced 'test AT test DOT com').",
         "The last four digits of your Social Security Number are 6233.",
         "Your birthdate is July 12th, 1991.",
         "Your Loan Officer is Terry Burke."
@@ -78,8 +78,8 @@
       },
       "servicingProcedure": {
         "achievementConditions": [
-          "The Customer Service Representative informs Carl that he should talk to his servicer, not his Loan Officer.",
-          "The Customer Service Representative gives Carl his servicer's number."
+          "The Customer Service Representative informs Carl that he should talk to his servicer Now Serviced By, not his Loan Officer.",
+          "The Customer Service Representative gives Carl his servicer's number, (111) 111-1111."
         ]
       },
       "fullVerification": {

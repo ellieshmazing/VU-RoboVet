@@ -15,13 +15,13 @@
     "verificationInformation": {
       "description": "Your 'verificationInformation' is sensitive data used to verify your identity.",
       "information": [
-        "Your full property address is 2 South Rhodes Crescent Northwest Atlanta, Georgia 30309",
-        "Your email is morrisonnina@gmail.com (pronounced 'Morisson Nina AT gmail DOT com).",
+        "Your full property address is 2222 South Fake Road Atlanta, Georgia 30309",
+        "Your email is test@test.com (pronounced 'test AT test DOT com).",
         "The last four digits of your Social Security Number are 8778.",
         "Your wife's name is Mia Morrison.",
         "The last four digits of your wife's Social Security Number are 3418.",
         "Your birthdate is December 25th, 1983.",
-        "Your Loan Officer is Terry Burke."
+        "Your Loan Officer is Emily Roark."
       ]
     },
     "tone": [

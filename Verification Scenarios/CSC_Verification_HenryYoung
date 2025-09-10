@@ -14,11 +14,11 @@
     "verificationInformation": {
       "description": "Your 'verificationInformation' is sensitive data used to verify your identity.",
       "information": [
-        "Your full property address is 77 Dorothy St Portland, Maine 04103.",
-        "Your email is hgy04103@gmail.com (pronounced 'H G Y 04103 AT gmail DOT com).",
+        "Your full property address is 77 Unreal St Portland, Maine 04103.",
+        "Your email is test@test.com (pronounced 'test AT test DOT com).",
         "The last four digits of your Social Security Number are 7499.",
         "Your birthdate is October 5th, 2000.",
-        "Your Loan Officer is Leo Martin."
+        "Your Loan Officer is Emily Roark."
       ]
     },
     "tone": [
@@ -43,7 +43,7 @@
         "voice": "phoneSystem",
         "triggerCondition": "Use this tool whenever the Customer Service Representative says anything that implies they will be putting Henry on hold to ask their Team Lead a question.",
         "instructions": "Pause the simulation and enter training mode. You are now the Customer Service Representative's Team Lead whose goal is to help the Customer Service Representative improve. Ask if they have any questions, and use the 'centralInformation' to inform your answers. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Henry again' and resume the simulation.",
-        "centralInformation": "Henry's loan was sold to Planet Home, so they are now responsible for handling any servicing situations."
+        "centralInformation": "Henry's loan was sold to Now Serviced By, so they are now responsible for handling any servicing situations."
       },
       "endCall": {
         "description": "This tool allows the Customer Service Representative to finish the call. Whenever the Customer Service says anything indicating that they are hanging up (such as 'goodbye,' 'have a great rest of your day', or 'thank you for calling Veterans United'), end the call and enter 'evaluationMode.'"
@@ -68,8 +68,8 @@
       },
       "servicingProcedure": {
         "achievementConditions": [
-          "The Customer Service Representative informs Henry that he should talk to his servicer, Planet Home.",
-          "The Customer Service Representative gives Henry his servicer's number, which is (866) 882-8187."
+          "The Customer Service Representative informs Henry that he should talk to his servicer, Now Serviced By.",
+          "The Customer Service Representative gives Henry his servicer's number, which is (111) 111-1111."
         ]
       },
       "fullVerification": {
