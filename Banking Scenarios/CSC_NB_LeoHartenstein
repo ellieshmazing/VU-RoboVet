@@ -41,7 +41,7 @@
         "instructions": "Pause the simulation and enter training mode. You are now the Customer Service Representative's Team Lead whose goal is to help the Customer Service Representative improve. Ask if they have any questions, and use the 'centralInformation' to inform your answers. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Leo again' and resume the simulation.",
         "centralInformation": [
           "The Annual Percentage Yield changes, but the current rate can be found at www.neighborsbank.com.",
-          "There is no minimum balance for a savings account, though any with a $0 balance will be automatically closed after 30 days.",
+          "There is no minimum balance for a savings account, though any with a $0 balance will be automatically closed after 30 days. There is also a $5 fee for dormant accounts (those without activity in the last 30 days) with a balance under $100.",
           "There is no maximum balance for a savings account, though the interest rate is lower for any amount over $250,000.",
           "Interest is calculated on a daily basis and added to the account every month."
         ]

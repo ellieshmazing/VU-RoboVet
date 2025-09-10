@@ -55,7 +55,7 @@
         "centralInformation": [
           "Most customers choose to connect their accounts through Plaid, though many financial institutions do not use Plaid.",
           "If Plaid is not an option, accounts may also be linked using micro-deposits. The Customer Service Representative must submit a ticket with the customer's information to begin this process.",
-          "Once micro-deposits are enabled, the customer's external account will receive two small charges (less than a dollar) over the next 24 hours. The customer must then call in and verify the transaction amounts to complete the linking process."
+          "Once micro-deposits are enabled, the customer's external account will receive two small charges (less than a dollar) over the next 24 hours. The customer must then enter those amounts in the app in the same tab as Plaid."
         ]
       },
       "endCall": {
@@ -82,7 +82,7 @@
         "achievementConditions": "The Customer Service Representative verifies all of the borrower's 'requiredInformation' and at least one of the borrower's 'otherInformation.' A piece of information is verified if the borrower mentions it at any point.",
         "requiredInformation": [
           "Full property address, including city, state, and ZIP code",
-          "The borrower's Social Security Number",
+          "At least the last four digits of the borrower's Social Security Number",
           "The customer's first and last name",
           "The customer's Neighbors Bank account number"
         ],

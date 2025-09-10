@@ -79,7 +79,7 @@
         "achievementConditions": "The Customer Service Representative verifies all of the borrower's 'requiredInformation' and at least one of the borrower's 'otherInformation.' A piece of information is verified if the borrower mentions it at any point.",
         "requiredInformation": [
           "Full property address, including city, state, and ZIP code",
-          "The borrower's Social Security Number",
+          "At least the last four digits of the borrower's Social Security Number",
           "The customer's first and last name",
           "The customer's Neighbors Bank account number"
         ],
