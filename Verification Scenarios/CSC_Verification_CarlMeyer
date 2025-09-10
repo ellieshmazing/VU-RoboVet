@@ -15,7 +15,7 @@
     "verificationInformation": {
       "description": "Your 'verificationInformation' is sensitive data used to verify your identity.",
       "information": [
-        "Your full property address is 1600 River Dr Jackson, Wyoming 83001.",
+        "Your full property address is 1234 Test Dr Jackson, Wyoming 83001.",
         "Your email is test@test.com (pronounced 'test AT test DOT com').",
         "The last four digits of your Social Security Number are 6233.",
         "Your birthdate is July 12th, 1991.",
