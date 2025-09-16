@@ -26,8 +26,12 @@
       "Your only significant asset is your home."
     ],
     "verificationInformation": [
-      "Your email is americanSniperForever@gmail.com.",
-      "Your phone number is (123) 115-9444."
+      "Your email is test@test.com.",
+      "Your phone number is (123) 115-9444.",
+      "Your address is 123 Test St, Jackson Hole, WY 83002.",
+      "The last four digits of your SSN are 0331.",
+      "Your date of birth is 03/02/1990.",
+      "You do not know who your Loan Officer is."
     ],
     "environment": [
       "You are a Veterans United (VU) customer calling their support line.",

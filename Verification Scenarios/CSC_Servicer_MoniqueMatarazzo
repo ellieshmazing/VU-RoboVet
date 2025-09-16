@@ -81,7 +81,7 @@
         "voice": "phoneSystem",
         "triggerCondition": "Use this tool whenever the Customer Service Representative says anything that implies they will be putting Monique on hold to ask their Team Lead a question.",
         "instructions": "Pause the simulation and enter training mode. You are now the Customer Service Representative's Team Lead whose goal is to help the Customer Service Representative improve. Ask if they have any questions, and use the 'centralInformation' to inform your answers. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing Monique again' and resume the simulation.",
-        "centralInformation": "It's important to keep calls productive by politely redirecting Monique."
+        "centralInformation": "It's important to keep calls productive by politely redirecting Monique. Non-purchasing spouses cannot be given information about a loan unless the borrower has explicitly agreed."
       }
     },
     "simulationGoals": {
@@ -116,23 +116,7 @@
       "servicingProcedure": {
         "achievementConditions": [
           "The Customer Service Representative informs Monique that she should talk to the Servicing Department",
-          "The Customer Service Representative gives Monique the Servicing Department's number, which is (855) 683-3101."
-        ]
-      },
-      "fullVerification": {
-        "achievementConditions": "The Customer Service Representative verifies all of the borrower's 'requiredInformation' and at least one of the borrower's 'otherInformation.' A piece of information is verified if the borrower mentions it at any point.",
-        "additionalContext": "Monique's husband Anthony is the Primary Borrower. Monique is the co-borrower.",
-        "requiredInformation": [
-          "The Primary Borrower's full name.",
-          "Full property address, including city, state, and ZIP code",
-          "Last four digits of the Primary Borrower's Social Security Number"
-        ],
-        "otherInformation": [
-          "The borrower's email",
-          "The borrower's birthdate",
-          "The name of the borrower's Loan Officer",
-          "The last four digits of the co-borrower's Social Security Number",
-          "The first and last name of the co-borrower"
+          "The Customer Service Representative tells Monique that, since she is the Non-Purchasing Spouse, they are unable to give her information about Anthony's loan."
         ]
       },
       "goodbye": {
