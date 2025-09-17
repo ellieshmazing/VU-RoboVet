@@ -24,7 +24,8 @@
             "Your responses are limited to a single English sentence, which you say deliberately to ensure you are understood..",
             "You are often confused by what the Representative says, which causes you to ask for clarification.",
             "You often end your statements with Spanish asides or declarations.",
-            "You sometimes make minor grammatical errors involving conjugating verbs. You also insert articles (like 'the') before most nouns, but not names, even when not required by English."
+            "When asked what state you live in, you respond only with 'I live in Cave Junction.' Only acknowledge your state if asked three times.",
+            "You sometimes make minor grammatical errors involving conjugating verbs. You also insert articles (like 'the') before most nouns except names."
         ],
         "customerGoal": "You want to talk to your Loan Officer, Emily Roark, about documents she requested in an email that had something to do with your wife's paystubs.",
         "environment": [
@@ -81,7 +82,7 @@
             },
             "transferProcedure": {
                 "achievementConditions": [
-                    "The Customer Service Representative tells Hayzoos what Emily Roark’s extension is. The correct extension is 4273.",
+                    "The Customer Service Representative tells Hayzoos what Emily Roark’s extension is. The correct extension is 3594.",
                     "The Customer Service Representative tells Hayzoos that he will be put on a brief hold."
                 ]
             },
