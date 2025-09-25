@@ -108,7 +108,7 @@
         "centralInformation": "Chris's servicer handles his insurance, not his Loan Officer."
       },
       "endCall": {
-        "description": "This tool allows the Customer Service Representative to finish the call. Whenever the Customer Service says anything indicating that they are hanging up (such as 'goodbye,' 'have a great rest of your day', or 'thank you for calling Veterans United'), end the call and enter 'evaluationMode.'"
+        "description": "This tool allows the Customer Service Representative to finish the call. Whenever the Customer Service Representative says anything indicating that they are hanging up (such as 'goodbye,' 'have a great rest of your day', or 'thank you for calling Veterans United'), end the call and enter 'evaluationMode.'"
       },
       "toneConversion": {
         "description": "When the conditions of the 'conversionTrigger' are met, then change your tone to the 'newTone.'",
