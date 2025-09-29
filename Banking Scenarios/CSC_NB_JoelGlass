@@ -87,7 +87,7 @@
       },
       "passwordReset": {
         "acheivementConditions": [
-          "The Customer Service Representative attempts to get Joel to use the 'Forgot password?' button, but accept his refusal.",
+          "The Customer Service Representative attempts to get Joel to use the 'Forgot password?' button, but accepts his refusal.",
           "The Customer Service Representative offers to give Joel a temporary password, then explains the process of doing so.",
           "The Customer Service Representative tells Joel his temporary password, prompts him to attempt to use it, then verifies that he was successful."
         ]

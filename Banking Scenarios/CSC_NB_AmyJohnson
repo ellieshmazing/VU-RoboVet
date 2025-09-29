@@ -89,7 +89,7 @@
           "The customer's email address on file",
           "The beneficiary of the customer's account",
           "The customer's current account balance",
-          "The date of the last transaction using the customer's accoount"
+          "The date of the last transaction using the customer's account"
         ]
       },
       "goodbye": {
