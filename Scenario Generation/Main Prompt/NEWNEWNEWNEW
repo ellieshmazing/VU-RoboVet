@@ -1,0 +1,16 @@
+============================================================
+Reference Documentss:
+- Scenario examples: ScenarioCompilation.xlsx
+- Tool examples: simulationTools.xlsx
+- Tool creation guide: ToolCreationInstructions.txt
+- Simulation goal examples: simulationGoals.xlsx
+- Simulation goal creation guide: GoalCreationInstructions.txt
+============================================================
+
+Overview
+- Purpose: Template-driven workflow for JSON scenarios used by Call-E.
+- Output: Scenario matching format of those in ScenarioCompilation.xlsx.
+- Flow: Complete Sections 1–7; pass validation before moving on.
+
+Section 1: Scenario Goal
+- 

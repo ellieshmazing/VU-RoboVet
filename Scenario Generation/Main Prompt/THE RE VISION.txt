@@ -1,226 +1,114 @@
 ============================================================
-Call-E Scenario Authoring: Standardized Instruction Set
-Version: 1.0
-Location references:
-- Format reference JSON: Scenario Generation/Format/ExampleOutline.JSON
-- Tool catalog: Scenario Generation/Format/Tools.txt
-- Tool creation guide: Scenario Generation/Instructions/ToolCreationInstructions.txt
-- Goals creation guide: Scenario Generation/Instructions/GoalsCreationInstructions.txt
-- Compiled examples: Scenario Generation/Compilations/All_Scenarios.json and All_Scenarios.txt
+Call-E Scenario Authoring: Standardized Instruction Set (v1.0)
+Refs:
+- Example JSON: Scenario Generation/Format/ExampleOutline.JSON
+- Tools: Scenario Generation/Format/Tools.txt
+- Tool guide: Scenario Generation/Instructions/ToolCreationInstructions.txt
+- Goals guide: Scenario Generation/Instructions/GoalsCreationInstructions.txt
+- Compiled: Scenario Generation/Compilations/All_Scenarios.json|.txt
 ============================================================
 
 Overview
-- Purpose: Provide a consistent, template-driven workflow for creating JSON scenario scripts used by Call-E.
-- Output standard: Matches the structure in ExampleOutline.JSON and compiled scenarios (All_Scenarios.json).
-- Authoring flow: Complete Sections 1–7 in order. Each section has Required and Optional fields. Only advance after Validation criteria are met.
-
-Section 0: Introduction (Required)
-Goal: Provide a brief introduction to the scenario authoring process.
-Fields (Required)
-- Introduction: [Free text]
+- Purpose: Template-driven workflow for JSON scenarios used by Call-E.
+- Output: Match ExampleOutline.JSON structure.
+- Flow: Complete Sections 1–7; pass validation before moving on.
 
 Section 1: Call Goal (Required)
-Goal: Define the scenario’s purpose, scope, and training objectives.
-Fields (Required)
 - Target Brand: [Veterans United | Paddio Mortgage | Neighbors Bank]
-- Caller Relationship: [Current Borrower | Prospective Borrower | Third Party | Employee]
-- Primary Call Purpose: [Short description]
+- Caller Relationship: [Current | Prospective | Third Party | Employee]
+- Primary Call Purpose: one concise sentence
 - Training Objective Type: [Technical | Customer Service | Both]
 - Scenario Complexity: [Beginner | Intermediate | Advanced]
-Fields (Optional)
-- Secondary Objectives: [List]
-- Constraints/Notes: [Free text]
-Validation
-- Primary Call Purpose is one concise sentence.
-- Training Objective Type is chosen and consistent with purpose.
-- Caller Relationship logically supports purpose (e.g., “Third Party” typically cannot receive account details).
-JSON Mapping
-- systemPrompt: Compose from Name (later), Character Summary (later), and Main Goal (Primary Call Purpose + Training Objective Type).
+- Optional: Secondary Objectives; Constraints/Notes
+- Validate: purpose concise; type consistent; relationship logical.
+- JSON: systemPrompt (later assembled from Name, Character Summary, Main Goal).
 
 Section 2: Character Profile (Required)
-Goal: Provide structured persona details to drive realism and verification content.
-Demographics (Required)
-- Name: [First Last]
-- Age: [Number or range]
-- Location: [City, State]
-- Living Situation: [Who they live with]
-Financial Profile (Required)
-- Employment Status: [Employed | Retired | Disabled | Unemployed]
-- Income Source: [Job | Benefits | Pension | Mixed]
-- Financial Stress Level: [Low | Moderate | High]
-- Current Loan Status: [None | In Process | Funded | Refinancing]
-Other Context (Optional)
-- Service affiliation (if any): [Veteran | Active Duty | Spouse | None]
-- Household details: [List]
-- Additional biographical notes: [List]
-Verification Information (Required for any call involving account-specific info)
-- Required identifiers available to verify identity. Examples:
-  - Property Address: [Street, City, State ZIP]
-  - Email(s): [List]
-  - Last four SSN(s): [Borrower, Co-borrower]
-  - Date(s) of Birth: [If applicable]
-  - Primary Borrower vs. Co-borrower: [Identify roles]
-Validation
-- If Section 4 indicates full verification, ensure at least two strong identifiers are listed (e.g., last four SSN + property address or DOB).
-- Emails are spelled with pronunciation guidance if needed (e.g., “DOT”, “AT”).
-JSON Mapping
-- characterInformation.customerPersona
-- characterInformation.house (from Living Situation/Household details)
-- characterInformation.financialInformation
-- characterInformation.otherInformation (optional)
-- characterInformation.verificationInformation.information
+- Demographics: Name; Age; Location; Living Situation
+- Financial: Employment; Income Source; Financial Stress; Loan Status
+- Optional: Service affiliation; Household; Bio notes
+- Verification (if account info): property address; emails (+pronunciation if needed); last four SSN; DOB; borrower roles
+- Validate: for full verification, list ≥2 strong identifiers; emails clear.
+- JSON: characterInformation.customerPersona; .house; .financialInformation; .otherInformation; .verificationInformation.information
 
-Section 3: Personality & Communication Style (Required)
-Goal: Standardize behavior and tone dynamics.
-Traits (Required)
-- Emotional State at Start: [Calm | Anxious | Frustrated | Angry | Confused]
-- Communication Style: [Direct | Verbose | Hesitant | Aggressive | Friendly]
-- Patience Level: [High | Medium | Low]
-- Tech Savviness: [High | Medium | Low]
-Trigger Responses (Optional)
-- Triggers: [List of actions/phrases that escalate or de-escalate]
-Tone List (Required)
-- Primary tone descriptors: [List]
-- Secondary tone descriptors (if using toneConversion): [List]
-Validation
-- If triggers imply tone changes, plan to include toneConversion tool (Section 6 and Tools.txt).
-JSON Mapping
-- characterInformation.tone
+Section 3: Personality & Communication (Required)
+- Traits: Emotional State; Communication Style; Patience; Tech Savviness
+- Optional: Triggers (escalate/de-escalate)
+- Tone: primary (and secondary if using toneConversion)
+- Validate: include toneConversion if tone shifts are planned.
+- JSON: characterInformation.tone
 
 Section 4: Call Procedure Mapping (Required)
-Goal: Define correct procedure(s), alternates, and common mistakes aligned with CSC operations.
-Primary Procedure Required (Select all that apply)
-- [ ] Basic Verification Only
-- [ ] Full Verification Required (Servicing/Funded/interim)
-- [ ] MyVU Account Support (Email verification required)
-- [ ] Transfer to Loan Officer / Licensed Representative
-- [ ] Transfer to Servicing Help
-- [ ] Transfer to Payment Processing (interim period)
-- [ ] Provide Servicer Number (post-boarding)
-Success Path (Required)
-- Step-by-step ideal flow the CSR should follow.
-Alternative Acceptable Paths (Optional)
-- Other paths that still meet policy.
-Common Mistakes (Required)
-- Likely errors to avoid (e.g., “Gave servicer number during interim”).
-Validation
-- If Full Verification is checked → Section 2 must include sufficient verification identifiers.
-- If MyVU Account Support is checked → include email verification in goals.
-- Transfer choices must match End States (Section 5) and Tools (Section 6).
-JSON Mapping
-- callInformation.simulationGoals.callProcedure (or procedure-specific goals)
-- Guides the selection of simulationTools (Section 6)
+- Primary Procedure(s): Basic Verification | Full Verification | MyVU Support | Transfer: LO | Transfer: Servicing Help | Transfer: Payment Processing | Provide Servicer Number
+- Success Path: step-by-step ideal flow
+- Alternatives: acceptable variants
+- Common Mistakes: e.g., wrong transfer, premature servicer number, insufficient verification
+- Validate: verification matches Section 2; MyVU requires email verification; transfers align with Section 5 & 6.
+- JSON: guides simulationGoals.callProcedure and tool selection
 
 Section 5: Call Resolution Paths (Required)
-Goal: Define clear success/failure end states and their triggers.
-Success Endings (Select at least one)
-- [ ] Successful Transfer: [Loan Officer | Servicing Help | Payment Processing]
-- [ ] Information Provided; Caller Satisfied
-- [ ] Issue Resolved by CSR
-Failure/Alternate Endings (Select any)
-- [ ] Incorrect Transfer
-- [ ] Insufficient Verification
-- [ ] Caller Hangs Up (frustration or crisis)
-- [ ] Procedure Not Followed
-For each selected ending, define:
-- Ending Trigger(s): [Lines/conditions/emotions]
-- Required Tool(s): [Map to Section 6]
-- Ending Script Notes: [Phone system messaging or caller line]
-Validation
-- Every ending has a corresponding tool or instruction (e.g., endCall, transfer tool, hangUpOnRepresentative).
-JSON Mapping
-- Guides inclusion and configuration of callInformation.simulationTools
+- Success: Successful Transfer (LO/Servicing/Payment) | Info Provided | Issue Resolved
+- Failure/Alt: Incorrect Transfer | Insufficient Verification | Caller Hangs Up | Procedure Not Followed
+- For each ending: Triggers; Required Tool(s); Script Notes
+- Validate: every ending maps to a tool or instruction (endCall/transfer/hangUp)
+- JSON: informs callInformation.simulationTools
 
 Section 6: Tools & Dynamic Behaviors (Required)
-Goal: Select and configure tools per Tools catalog.
-Reference: Scenario Generation/Format/Tools.txt
-Always Consider
-- askTeamLead (Always include)
-- endCall (Always include)
-Choose Based on Sections 4–5
-- evaluationMode or reviewMode (include exactly one)
-- loanOfficerTransfer (if transfer to LO)
-- servicingHelpTransfer + servicingHelpRepresentative (if transfer to Servicing Help)
-- paymentProcessingTransfer + paymentProcessingRepresentative (if interim Payment Processing)
-- toneConversion (if narrative requires emotional transitions)
-- hangUpOnRepresentative (if caller may end the call abruptly)
-For each selected tool, define:
-- Inclusion Criteria Justification: [Why it’s included]
-- voice: [phoneSystem | specialized voice]
-- triggerPhrases / triggerCondition: [Broad coverage for speech or structural triggers]
-- instructions / description: [Exactly what happens]
-- Any nested character instructions (e.g., representative personas) if applicable
-Validation
-- If toneConversion is included → Section 3 must have multiple tones and triggers.
-- Transfer tools should chain to the correct representative tools where applicable.
-JSON Mapping
-- callInformation.simulationTools
+- Always: askTeamLead; endCall
+- Choose exactly one: evaluationMode or reviewMode
+- As needed: loanOfficerTransfer; servicingHelpTransfer + servicingHelpRepresentative; paymentProcessingTransfer + paymentProcessingRepresentative; toneConversion; hangUpOnRepresentative
+- For each tool: inclusion rationale; voice; triggers; instructions; nested personas if any
+- Validate: toneConversion ⇔ multi-tone triggers; transfer chains correct.
+- JSON: callInformation.simulationTools
 
-Section 7: Evaluation Criteria (Auto-Generated + Customizable)
-Goal: Define goals that evaluate trainee performance. Start from defaults and add scenario-specific goals.
-Defaults (Always include)
-- introduction.achievementConditions:
-  - Thank the caller for contacting Veterans United.
-  - Introduce self by first name.
-  - Ask who they are speaking with.
-- basicVerification.achievementConditions:
-  - Verify all items in borrowerInformation: [First name, Last name, State] (or as updated by policy).
-- goodbye.achievementConditions:
-  - Offer a warm goodbye or thank the caller for contacting Veterans United.
-Conditional Goals
-- fullVerification (if Section 4 indicates Servicing/Funded/interim): define requiredInformation and otherInformation.
-- myVUVerification (if MyVU selected): verify email address and guide reset/enrollment as applicable.
-- Procedure-Specific Goals (derive from Section 4 Success Path): name these clearly, e.g., servicingProcedure, myVUProcedure, transferProcedure.
-Custom Goals (Optional)
-- Add customer-service oriented goals (e.g., de-escalation, empathy statements).
-Validation
-- Coverage: Every key step in Success Path has a goal condition.
-- Non-duplication: Avoid redundant conditions across goals.
-References
-- Goals creation guide: Scenario Generation/Instructions/GoalsCreationInstructions.txt
-JSON Mapping
-- callInformation.simulationGoals
+Section 7: Evaluation Criteria (Auto + Customizable)
+- Defaults:
+  - introduction: thank caller; introduce self (first name); ask who you’re speaking with
+  - basicVerification: verify [First, Last, State] (or current policy)
+  - goodbye: warm goodbye/thanks
+- Conditional:
+  - fullVerification: requiredInformation; otherInformation
+  - myVUVerification: verify email; reset/enroll
+  - Procedure-specific: e.g., servicingProcedure, myVUProcedure, transferProcedure
+- Custom: de-escalation, empathy, etc.
+- Validate: coverage of success path; avoid duplicates.
+- JSON: callInformation.simulationGoals
 
 Final Assembly & System Prompt
-System Prompt Template
-- Base: “You are a role-playing assistant for CSR training, simulating realistic and challenging customer interactions. Your task is to embody borrower {Name}, a {Character Summary}. Your goal is to provide a realistic training scenario that requires the CSR to {Main Goal}.”
-- Character Summary: Construct from Section 2 (age/location/role) + selected personality.
-- Main Goal: Derived from Section 1’s Primary Call Purpose and Training Objective Type.
-JSON Mapping Summary
-- systemPrompt: From Section 1 + Section 2 summary
-- characterInformation: From Sections 2–3
-- callInformation.simulationTools: From Section 6
-- callInformation.simulationGoals: From Section 7
+- System Prompt: “You are a role-playing assistant... embody borrower {Name}, a {Character Summary}. Your goal is to require the CSR to {Main Goal}.”
+- Character Summary: Section 2 + personality
+- Main Goal: Section 1 Primary Purpose + Training Type
+- JSON Summary:
+  - systemPrompt: Sec 1 + 2
+  - characterInformation: Sec 2–3
+  - simulationTools: Sec 6
+  - simulationGoals: Sec 7
 
-Quality Assurance Checklist (Complete before JSON generation)
-- [ ] Required fields complete in Sections 1–7.
-- [ ] Verification information sufficient for indicated procedures (Section 4 vs Section 2).
-- [ ] Personality and tone align with complexity and goals.
-- [ ] End states (Section 5) have corresponding tools (Section 6).
-- [ ] Goals (Section 7) fully cover the Success Path and required verifications.
-- [ ] Tool instructions are broad enough to trigger reliably; transfer chains are correct.
-- [ ] Guardrails included (see below) and aligned with ExampleOutline.JSON.
+Quality Assurance Checklist
+- [ ] Sections 1–7 required fields complete
+- [ ] Verification sufficiency (Sec 4 vs Sec 2)
+- [ ] Personality/tone align with complexity/goals
+- [ ] End states (Sec 5) ↔ tools (Sec 6)
+- [ ] Goals (Sec 7) cover success path + verifications
+- [ ] Tool triggers broad; transfer chains correct
+- [ ] Guardrails included; match ExampleOutline.JSON
 
-Guardrails (copy into JSON as in ExampleOutline.JSON)
-- Never break character unless the CSR explicitly requests coach mode (askTeamLead) or the tool instructs otherwise.
-- Use prompt information to inform answers, but avoid quoting it verbatim.
-- Never play the role of the CSR; always remain the caller.
+Guardrails (copy into JSON)
+- Never break character unless coach mode (askTeamLead) or a tool directs it
+- Use prompt info without quoting it verbatim
+- Always remain the caller; never play the CSR
 
-Authoring Flow Prompting (for an assistant guiding a human author)
-- Ask for Section 1 fields; confirm Validation.
-- Move to Section 2, request structured data; confirm Validation.
-- Move to Section 3, confirm tone vs possible toneConversion.
-- Map procedures in Section 4 and cross-validate verification requirements.
-- Define endings in Section 5 and map to tools.
-- Select and configure tools in Section 6 (link to Tools.txt for element names/behavior).
-- Auto-generate base goals for Section 7; add conditional and custom goals; confirm coverage.
-- Run QA Checklist; then assemble JSON following ExampleOutline.JSON conventions.
+Authoring Flow (for assistant prompting)
+- Gather Sec 1; validate
+- Gather Sec 2; validate (esp. verification)
+- Sec 3 tones; decide on toneConversion
+- Map Sec 4; cross-check verification
+- Define Sec 5 endings; map tools
+- Select/configure tools (Sec 6)
+- Auto-add base goals; add conditional/custom; confirm coverage (Sec 7)
+- Run QA; assemble JSON per ExampleOutline.JSON
 
-Notes on Naming & Consistency
-- Prefer camelCase for JSON keys (as shown in ExampleOutline.JSON).
-- Use the same goal and tool names as in ExampleOutline.JSON and Tools.txt to maximize reuse.
-- Provide pronunciation notes for emails or names when helpful.
-- When referencing roles, be explicit (e.g., “Primary Borrower” vs “Co-borrower”).
-
-End of Standardized Instruction Set
-============================================================
+Naming & Consistency
+- Use camelCase keys; reuse names from ExampleOutline.JSON and Tools.txt
+- Provide email/name pronunciation when helpful
+- Be explicit about borrower vs co-borrower roles
