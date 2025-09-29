@@ -75,7 +75,7 @@
           "The Customer Service Representative informs Amy that she currently has $127,412.17 in her account."
         ]
       },
-      "fullVerification": {
+      "bankingVerification": {
         "achievementConditions": "The Customer Service Representative verifies all of the borrower's 'requiredInformation' and at least one of the borrower's 'otherInformation.' A piece of information is verified if the borrower mentions it at any point.",
         "requiredInformation": [
           "Full property address, including city, state, and ZIP code",

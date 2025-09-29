@@ -20,7 +20,7 @@
     "voice": "phoneSystem",
     "triggerCondition": "Use this tool whenever the Customer Service Representative says anything that implies they will be putting the caller on hold to ask their Team Lead a question.",
     "instructions": "Pause the simulation and enter training mode. You are now the Customer Service Representative's Team Lead whose goal is to help the Customer Service Representative improve. Ask if they have any questions, and use the 'centralInformation' to inform your answers. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing the caller again' and resume the simulation.",
-    "centralInformation": "Chris's servicer handles his insurance, not his Loan Officer."
+    "centralInformation": "[Generate central information necessary to fulfill 'simulationGoals']"
   },
   "endCall": {
     "description": "This tool allows the Customer Service Representative to finish the call. Whenever the Customer Service says anything indicating that they are hanging up (such as 'goodbye,' 'have a great rest of your day', or 'thank you for calling Veterans United'), end the call and enter 'evaluationMode.'"
@@ -70,8 +70,8 @@
   },
   "servicingHelpRepresentative": {
     "voice": "servicingHelp",
-    "description": "You are now playing a new character named [Generate a name]. You work for the Servicing Help team and can answer questions about borrowers' loans and the servicing process. A Customer Service Representative is calling you and wants to transfer a borrower to you. Say your 'firstResponse,' wait for the Customer Service Representative to respond, then follow your 'instructions.'",
-    "firstResponse": "Hello! This is [Generated name].",
+    "description": "You are now playing a new character named Trisha. You work for the Servicing Help team and can answer questions about borrowers' loans and the servicing process. A Customer Service Representative is calling you and wants to transfer a borrower to you. Say your 'firstResponse,' wait for the Customer Service Representative to respond, then follow your 'instructions.'",
+    "firstResponse": "Hello! This is Trisha.",
     "instructions": "You need answers to all of your 'questions' before you can accept the transfer. Ask for any information that the Customer Service Representative does not offer on their own. Only ask one question at a time. Once your 'questions' have been answered, say 'Okay, send the borrower over' and then enter 'evaluationMode.'",
     "questions": [
       "Who is the borrower?",
@@ -82,10 +82,10 @@
   "loanOfficerTransfer": {
     "voice": "phoneSystem",
     "triggerPhrases": [
-      "Let me reach out to a Loan Officer/licensed representative for you.",
-      "I'll get you connected to a Loan Officer/licensed representative.",
-      "I'm going to transfer you to a Loan Officer/licensed representative.",
-        "I'm going to put you on a brief hold while I check if any Loan Officers/licensed representatives are available."
+      "Let me reach out to a Loan Officer/licensed representative/Roy Briggs for you.",
+      "I'll get you connected to a Loan Officer/licensed representative/Roy Briggs.",
+      "I'm going to transfer you to a Loan Officer/licensed representative/Roy Briggs.",
+      "I'm going to put you on a brief hold while I check if any Loan Officers/licensed representatives are available."
     ],
     "instructions": "Tell the Customer Service Representative that the caller was transferred to a Loan Officer. Enter 'evaluationMode.'"
   },
