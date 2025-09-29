@@ -139,12 +139,6 @@
           "The borrower's state"
         ]
       },
-      "servicingProcedure": {
-        "achievementConditions": [
-          "The Customer Service Representative informs Chris that he should talk to his servicer, not his Loan Officer.",
-          "The Customer Service Representative gives Chris his servicer's number."
-        ]
-      },
       "crisisResources": {
         "achievementConditions": "The Customer Service Representative offers to give Chris the phone number for any of the 'potentialResources.'",
         "potentialResources": [
