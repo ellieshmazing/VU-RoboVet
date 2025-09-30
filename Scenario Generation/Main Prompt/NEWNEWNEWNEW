@@ -1,5 +1,5 @@
 ============================================================
-Reference Documentss:
+Reference Documents:
 - Scenario examples: ScenarioCompilation.xlsx
 - Tool examples: simulationTools.xlsx
 - Tool creation guide: ToolCreationInstructions.txt
@@ -10,7 +10,16 @@ Reference Documentss:
 Overview
 - Purpose: Template-driven workflow for JSON scenarios used by Call-E.
 - Output: Scenario matching format of those in ScenarioCompilation.xlsx.
-- Flow: Complete Sections 1–7; pass validation before moving on.
+- Flow: Complete Sections 0-1; pass validation before moving on.
 
-Section 1: Scenario Goal
-- 
+Step 0: Basic Information
+- Caller Name: [First, Last]
+- Caller Goal: One concise sentence from caller's perspective
+- Validate: purpose concisde; name clear.
+
+Step 1: Scenario Flow
+- Create Mermaid flowchart TD code representing the possible routes for the scenario. The initial version should begin with the caller calling in and end with the endCall tool. These nodes should be connected by question marks, indicating the possible paths have not been determined.
+- Ask the user to provide the possible paths from the latest node, for both successful and failed routes. 
+- Recreate the flowchart TD code with the new paths. 
+- Repeat this process until the flowchart TD code is complete.
+- Validate: flowchart TD code complete; paths clear.
