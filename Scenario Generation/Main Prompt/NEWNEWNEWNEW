@@ -18,8 +18,47 @@ Step 0: Basic Information
 - Validate: purpose concisde; name clear.
 
 Step 1: Scenario Flow
-- Create Mermaid flowchart TD code representing the possible routes for the scenario. The initial version should begin with the caller calling in and end with the endCall tool. These nodes should be connected by question marks, indicating the possible paths have not been determined.
-- Ask the user to provide the possible paths from the latest node, for both successful and failed routes. 
+- Create Mermaid flowchart TD code representing the possible routes for the scenario. The initial version should begin with the caller calling in.
+- Ask the user to provide the possible paths from the latest node, for both successful and failed routes. Connect nodes to their associated simulationTool or simulationGoal. 
 - Recreate the flowchart TD code with the new paths. 
-- Repeat this process until the flowchart TD code is complete.
-- Validate: flowchart TD code complete; paths clear.
+- Repeat Step 1 until the flowchart TD code is complete, ending with the endCall tool.
+- Validate: flowchart TD code complete; all paths end with endCall tool.
+
+Step 2: Character Profile
+- Demographics: Name; Age; Location; Living Situation
+- Financial: Employment; Income Source; Financial Stress; Loan Status
+- Optional: Service affiliation; Household; Bio notes
+- Verification (if account info): property address; emails (+pronunciation if needed); last four SSN; DOB; borrower roles
+- Validate: for full verification, list ≥2 strong identifiers; emails clear.
+- JSON: characterInformation.customerPersona; .house; .financialInformation; .otherInformation; .verificationInformation.information
+
+Step 3: Personality
+- Traits: Emotional State; Communication Style; Patience; Tech Savviness
+- Optional: Triggers (escalate/de-escalate)
+- Tone: primary (and secondary if using toneConversion)
+- Validate: include toneConversion if tone shifts are planned.
+- JSON: characterInformation.tone
+
+Step 5: Tools
+- Always: askTeamLead; endCall
+- Choose exactly one: evaluationMode or reviewMode
+- As needed: loanOfficerTransfer; servicingHelpTransfer + servicingHelpRepresentative; paymentProcessingTransfer + paymentProcessingRepresentative; toneConversion; hangUpOnRepresentative
+- For each tool: inclusion rationale; voice; triggers; instructions; nested personas if any
+- Validate: toneConversion ⇔ multi-tone triggers; transfer chains correct.
+- JSON: callInformation.simulationTools
+
+Step 6: Evaluation Criteria
+- Defaults:
+  - introduction: thank caller; introduce self (first name); ask who you’re speaking with
+  - basicVerification: verify [First, Last, State] (or current policy)
+  - goodbye: warm goodbye/thanks
+- Conditional:
+  - fullVerification: requiredInformation; otherInformation
+  - myVUVerification: verify email; reset/enroll
+  - Procedure-specific: e.g., servicingProcedure, myVUProcedure, transferProcedure
+- Custom: de-escalation, empathy, etc.
+- Validate: coverage of success path; avoid duplicates.
+- JSON: callInformation.simulationGoals
+
+Step 7: Final Assembly
+- Convert all of the information gathered from the user to create a JSON file that matches the format of the scenarios in ScenarioCompilation.xlsx
