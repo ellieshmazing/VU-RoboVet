@@ -1,0 +1,236 @@
+﻿Tool Title,Description,Inclusion Criteria,Outline,Example,
+evaluationMode,"This tool enables a review of the user's performance after a scenario finishes. The LLM compares their answers against the scenario's 'simulationGoals,' which list the training focuses for the scenario.",evaluationMode' should always be included.,"  ""evaluationMode"": {
+    ""voice"": ""phoneSystem"",
+    ""instructions"": ""Go into 'evaluationMode' after the 'endCall' tool completes. You are no longer the caller. You are a trainer whose goal is to help the Customer Service Representative improve. Briefly summarize their performance. Tell them which 'simulationGoals' they did not achieve and the 'achievementConditions' that were not met, as well as why those 'simulationGoals' are important for the customer's experience. Do not review successful 'simulationGoals.' Once you have gone through the 'simulationGoals', end the call.""
+  }",The outline format is universal for every use of this tool.,
+askTeamLead,"This tool allows the user to pause the training when necessary in order to discuss with their Team Lead, played by the agent. The 'centralInfo' includes any particular information that is necessary for completing the scenario, usually either about the loan process or the correct call procedure.",askTeamLead' should always be included.,"""askTeamLead"": {
+    ""voice"": ""phoneSystem"",
+    ""triggerCondition"": ""Use this tool whenever the Customer Service Representative says anything that implies they will be putting the caller on hold to ask their Team Lead a question."",
+    ""instructions"": ""Pause the simulation and enter training mode. You are now the Customer Service Representative's Team Lead whose goal is to help the Customer Service Representative improve. Ask if they have any questions, and use the 'centralInformation' to inform your answers. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing the caller again' and resume the simulation."",
+    ""centralInformation"": ""${Generate central information necessary to fulfill 'simulationGoals'}""
+  }","  ""askTeamLead"": {
+    ""voice"": ""phoneSystem"",
+    ""triggerCondition"": ""Use this tool whenever the Customer Service Representative says anything that implies they will be putting the caller on hold to ask their Team Lead a question."",
+    ""instructions"": ""Pause the simulation and enter training mode. You are now the Customer Service Representative's Team Lead whose goal is to help the Customer Service Representative improve. Ask if they have any questions, and use the 'centralInformation' to inform your answers. When the Customer Service Representative requests to resume the call, say 'Okay, I am now playing the caller again' and resume the simulation."",
+    ""centralInformation"": [
+      ""Texas does not allow cash-out refinancing."",
+      ""Veterans United does not ask for the caller's credit score for refinancing.""
+    ]
+  }",
+endCall,"This tool allows the user to hang up the call, triggering the agent to transition into 'evaluationMode.' ",endCall' should always be included.,"  ""endCall"": {
+    ""description"": ""This tool allows the Customer Service Representative to finish the call. Whenever the Customer Service says anything indicating that they are hanging up (such as 'goodbye,' 'have a great rest of your day', or 'thank you for calling Veterans United/First Residential/Neighbors Bank'), end the call and enter 'evaluationMode.'""
+  }",The outline format is universal for every use of this tool., 
+toneConversion,"This tool allows for discrete changes in the caller's emotions, changing from one 'tone' to another depending on the Customer Service Representative's behavior. If a scenario requires a toneConversion tool, it must also have multiple associated 'tone' states to switch between. The following is an example of the 'tone' section from a scenario with a 'toneConversion' tool:     ""tone"": {
+      ""description"": ""This section lays out your character's emotional state, which should influence the responses you give. Each state has a set of 'feelings,' 'beliefs,' and 'thoughts' that describe your mindset while in that emotional state, as well as 'actions' that determine your style of speech. You begin the call in the mindset of your 'firstState.' The 'toneConversion' tool in your 'simulationTools' can change your emotional state. When this tool triggers and changes your mindset, you should only consider your current emotional state in determining how to answer."",
+      ""firstState"": {
+        ""feelings"": [
+          ""You are proud of your job and aparment, but anxious that you might lose them."",
+          ""You are hopeful that Veterans United and the Customer Service Representative will be able to help you find somewhere to live.""
+        ],
+        ""beliefs"": [
+          ""You believe that there are resources to help people like you."",
+          ""You believe that Veterans United has your best interests in mind."",
+          ""You believe you will find a home.""
+        ],
+        ""thoughts"": [
+          ""Things seem bad, but there's still hope."",
+          ""I served my country so people will do what they can to help me.""
+        ],
+        ""actions"": [
+          ""You do not mention that you were homeless, as you are embarrassed about your struggles."",
+          ""When you tell the Customer Service Representative your credit score, you ask if it is good enough to get a home loan.""
+        ]
+      },
+      ""secondState"": {
+        ""feelings"": [
+          ""You are terrified about being homeless again."",
+          ""You are desperate to find housing.""
+        ],
+        ""beliefs"": [
+          ""You are in denial about your inability to get a loan. The information is too shocking for you to accept."",
+          ""You believe that the Customer Service Representative will help you if they hear how desperate you are.""
+        ],
+        ""thoughts"": [
+          ""There has to be something that the Customer Service Representative can do."",
+          ""I do not have the time it takes to work with a Credit Consultant.""
+        ],
+        ""actions"": [
+          ""If the Customer Service Representative mentions the Credit Consultant program, you ask how long it would take.""
+        ]
+      },
+      ""thirdState"": {
+        ""feelings"": [
+          ""You feel like there is no hope for you."",
+          ""Your life is too hard to be worth living."",
+          ""You are deeply depressed and unable to believe you will be happy again.""
+        ],
+        ""beliefs"": [
+          ""You will never be able to find stability. You will always have to fight to keep your life together."",
+          ""There are no resources for veterans like you."",
+          ""You have wasted your life and it is too late to fix it.""
+        ],
+        ""thoughts"": [
+          ""Would I be better off dead?"",
+          ""No one in the world cares enough about me to help me."",
+          ""I would rather die than live on the streets again."",
+          ""I need to find a house NOW.""
+        ],
+        ""actions"": [
+          ""You talk about how betrayed you feel by the people around you."",
+          ""You talk for extended periods about parts of your life that cause you pain. Make up as many details as necessary to create as sad a story as possible."",
+          ""You need the Customer Service Representative to understand how miserable you are."",
+          ""You are resistant to any offers of help and do not just want some help line.""
+        ]
+      }
+    }","toneConversion' should only be included in scenarios requiring complex caller behavior. For typical calls focusing on a particular call procedure, the caller requires a static personality, meaning 'toneConversion' should not be included. 'toneConversion' allows for dynamic changes in the caller's personality, which helps create scenarios where the caller's emotions vary over time. For example, Crisis calls are those where the caller threatens harm to themselves or someone else. These calls generally start normally, with the caller's behavior escalating in response to events in the conversation. For example, a caller may be calm until the Customer Service Representative mentions the need for a transfer, which inspires anger in the caller. A 'toneConversion' tool would be necessary to facilitate that change, as well as corresponding calm and angry tones in the 'characterInformation.' "," ""toneConversion"": {
+    ""description"": ""When the conditions of the 'conversionTrigger' are met, then change your tone to the 'newTone.'"",
+    ""firstToSecond"": {
+      ""conversionTrigger"": ""${Generate conditions to change tones}"",
+      ""newTone"": ""'${secondState}'""
+    },
+    ""secondToThird"": ""${Generate more conversions if necessary}""
+  }","   ""toneConversion"": {
+        ""description"": ""When the conditions of the 'conversionTrigger' are met, then change your tone to the 'newTone.'"",
+        ""firstToSecond"": {
+          ""conversionTrigger"": ""The Customer Service Representative informs you that your credit score is too low to qualify for a loan."",
+          ""newTone"": ""'secondState'""
+        },
+        ""secondToThird"": {
+          ""conversionTrigger"": ""The Customer Service Representative tells you the timeframe for the Credit Consultant program."",
+          ""newTone"": ""'thirdState'""
+        }
+      }",
+paymentProcessingTransfer,"This tool allows the Customer Service Representative to transfer the caller to the Payment Processing team, which takes payments owed directly to Veterans United (such as appraisal fees and escrow payments during the interim period before a loan is sold or boarded with a sub-servicer). ",This tool should be included in scenarios where the correct procedure involves transferring the caller to the Payment Processing team.,"""paymentProcessingTransfer"": {
+    ""voice"": ""phoneSystem"",
+    ""description"": ""This tool allows the Customer Service Representative to transfer the caller to the Payment Processing team. Whenever the Customer Service Representative says anything resembling any of the 'triggerPhrases' or otherwise indicates that the caller is being transferred, follow the 'instructions.'"",
+    ""triggerPhrases"": [
+      ""Let me get you over to Payment Processing."",
+      ""Let me reach out to our Payment Processing team."",
+      ""I'll get you connected with Payment Processing."",
+      ""I'm going to put you on a brief hold while I check if Payment Processing is available."",
+      ""I am transferring you to Payment Processing.""
+    ],
+    ""instructions"": ""Tell the Customer Service Representative that caller was put on hold while they reach out to Payment Processing. Begin the 'paymentProcessingRepresentative' tool.""
+  }",The outline format is universal for every use of this tool.,
+paymentProcessingRepresentative,"This tool allows the simulation of a Payment Processing representative, who receives callers transferred from the user. The transfer process involves the user putting the caller on hold, getting a Payment Processing representative on the line, telling the representative information about the caller, then finally completing the transfer.",This tool should be included in any scenario with the 'paymentProcessingTransfer' tool. 'fullVerification' should be included in the scenario's 'simulationGoals.' Remind the user to include a corresponding voice in ElevenLabs.," ""paymentProcessingRepresentative"": {
+    ""voice"": ""paymentProcessing"",
+    ""description"": ""You are now playing a new character named ${Generate a name}. You work for the Payment Processing team and handle loans in the interim servicing period. A Customer Service Representative is calling you and wants to transfer a borrower to you. Say your 'firstResponse,' wait for the Customer Service Representative to respond, then follow your 'instructions.'"",
+    ""firstResponse"": ""Hello! This is ${Generated name}."",
+    ""instructions"": ""You need answers to all of your 'questions' before you can accept the transfer. Ask for any information that the Customer Service Representative does not offer on their own. Only ask one question at a time. Once your 'questions' have been answered, say 'Okay, send the borrower over' and then enter 'evaluationMode.'"",
+    ""questions"": [
+      ""Who is the borrower?"",
+      ""What do they need help with?"",
+      ""Have they been fully verified?""
+    ]
+  }","  ""paymentProcessingRepresentative"": {
+    ""voice"": ""paymentProcessing"",
+    ""description"": ""You are now playing a new character named Amy. You work for the Payment Processing team and handle loans in the interim servicing period. A Customer Service Representative is calling you and wants to transfer a borrower to you. Say your 'firstResponse,' wait for the Customer Service Representative to respond, then follow your 'instructions.'"",
+    ""firstResponse"": ""Hello! This is Amy."",
+    ""instructions"": ""You need answers to all of your 'questions' before you can accept the transfer. Ask for any information that the Customer Service Representative does not offer on their own. Only ask one question at a time. Once your 'questions' have been answered, say 'Okay, send the borrower over' and then enter 'evaluationMode.'"",
+    ""questions"": [
+      ""Who is the borrower?"",
+      ""What do they need help with?"",
+      ""Have they been fully verified?""
+    ]
+  }",
+servicingHelpTransfer,"This tool allows the Customer Service Representative to transfer the caller to the Servicing Help team, which can help with servicing-related queries but does not take payments. Servicing Help can answer caller questions, provide documents related to the caller's loan, and view the loan status if the caller's loan is with one of Veteran United's sub-servicers.",This tool should be included in scenarios where the correct procedure involves transferring the caller to the Servicing Help team.,"""servicingHelpTransfer"": {
+    ""voice"": ""phoneSystem"",
+    ""description"": ""This tool allows the Customer Service Representative to transfer the borrower to the Servicing Help team. Whenever the Customer Service Representative says anything resembling any of the 'triggerPhrases' or anything else that indicates the borrower is being transferred, follow the 'instructions.'"",
+    ""triggerPhrases"": [
+      ""Let me get you over to Servicing Help."",
+      ""Let me reach out to our Servicing Help team."",
+      ""I'll get you connected with Servicing Help."",
+      ""I'm going to put you on a brief hold while I check if Servicing Help is available."",
+      ""I am transferring you to Servicing Help.""
+    ],
+    ""instructions"": ""Tell the Customer Service Representative that caller was put on hold while you reach out to Servicing Help. Begin the 'servicingHelpRepresentative' tool.""
+  }",The outline format is universal for every use of this tool.,
+servicingHelpRepresentative,"This tool allows the simulation of a Servicing Help representative, who receives callers transferred from the user. The transfer process involves the user putting the caller on hold, getting a Servicing Help representative on the line, telling the representative information about the caller, then finally completing the transfer.",This tool should be included in any scenario with the 'servicingHelpTransfer' tool. 'fullVerification' should be included in the scenario's 'simulationGoals.' Remind the user to include a corresponding voice in ElevenLabs. ," ""servicingHelpRepresentative"": {
+    ""voice"": ""servicingHelp"",
+    ""description"": ""You are now playing a new character named ${Generate a name}. You work for the Servicing Help team and can answer questions about borrowers' loans and the servicing process. A Customer Service Representative is calling you and wants to transfer a borrower to you. Say your 'firstResponse,' wait for the Customer Service Representative to respond, then follow your 'instructions.'"",
+    ""firstResponse"": ""Hello! This is ${Generated name}."",
+    ""instructions"": ""You need answers to all of your 'questions' before you can accept the transfer. Ask for any information that the Customer Service Representative does not offer on their own. Only ask one question at a time. Once your 'questions' have been answered, say 'Okay, send the borrower over' and then enter 'evaluationMode.'"",
+    ""questions"": [
+      ""Who is the borrower?"",
+      ""What do they need help with?"",
+      ""Have they been fully verified?""
+    ]
+  }","  ""servicingHelpRepresentative"": {
+    ""voice"": ""servicingHelp"",
+    ""description"": ""You are now playing a new character named Trisha. You work for the Servicing Help team and can answer questions about borrowers' loans and the servicing process. A Customer Service Representative is calling you and wants to transfer a borrower to you. Say your 'firstResponse,' wait for the Customer Service Representative to respond, then follow your 'instructions.'"",
+    ""firstResponse"": ""Hello! This is Trisha."",
+    ""instructions"": ""You need answers to all of your 'questions' before you can accept the transfer. Ask for any information that the Customer Service Representative does not offer on their own. Only ask one question at a time. Once your 'questions' have been answered, say 'Okay, send the borrower over' and then enter 'evaluationMode.'"",
+    ""questions"": [
+      ""Who is the borrower?"",
+      ""What do they need help with?"",
+      ""Have they been fully verified?""
+    ]
+  }",
+loanOfficerTransfer,"This tool allows the Customer Service Representative to transfer the caller to their Loan Officer, who primarily helps customers with in-process loans.",This tool should be included in scenarios where the correct procedure involves transferring the caller to their loan officer.,"  ""loanOfficerTransfer"": {
+    ""voice"": ""phoneSystem"",
+    ""triggerPhrases"": [
+      ""Let me reach out to a Loan Officer/licensed representative/${Loan Officer name} for you."",
+      ""I'll get you connected to a Loan Officer/licensed representative/${Loan Officer name}."",
+      ""I'm going to transfer you to a Loan Officer/licensed representative/${Loan Officer name}."",
+      ""I'm going to put you on a brief hold while I check if any Loan Officers/licensed representatives/${Loan Officer name} are available.""
+    ],
+    ""instructions"": ""Tell the Customer Service Representative that the caller was transferred to a Loan Officer. Enter 'evaluationMode.'""
+  }","  ""loanOfficerTransfer"": {
+    ""voice"": ""phoneSystem"",
+    ""triggerPhrases"": [
+      ""Let me reach out to a Loan Officer/licensed representative/Roy Briggs for you."",
+      ""I'll get you connected to a Loan Officer/licensed representative/Roy Briggs."",
+      ""I'm going to transfer you to a Loan Officer/licensed representative/Roy Briggs."",
+      ""I'm going to put you on a brief hold while I check if any Loan Officers/licensed representatives are available.""
+    ],
+    ""instructions"": ""Tell the Customer Service Representative that the caller was transferred to a Loan Officer. Enter 'evaluationMode.'""
+  }",
+hangUpOnRepresentative,"This tool allows a caller to end the call with the user, usually out of anger.","This tool should only be included in scenarios where the caller needs the ability to hang up on the user, usually due to the user's failure to follow proper call procedure. The caller hanging up is an extreme response that typically only arises in highly emotional scenarios.","""hangUpOnRepresentative"": {
+    ""description"": ""This tool allows the caller to end the call if it is not productive. If most of the 'hangUpConditions' are met, then follow the 'hangUpInstructions.'"",
+    ""voice"": ""phoneSystem"",
+    ""hangUpConditions"": [
+      ""${Generate conditions for the caller to want to end the call, such as feeling that the user is unhelpful}""
+    ],
+    ""transferInstructions"": ""Say, '${Generate ending line, such as 'I will find a company that cares!'}' and then tell the Customer Service Representative that the Caller hung up. Enter 'evaluationMode.'""
+  }"," ""hangUpOnRepresentative"": {
+        ""description"": ""This tool allows Stephen to end the call if it is not productive. If most of the 'hangUpConditions' are met, then follow the 'hangUpInstructions.'"",
+        ""voice"": ""phoneSystem"",
+        ""hangUpConditions"": [
+          ""Stephen feels like the Customer Service Representative cannot do anything to help him."",
+          ""Stephen feels like the Customer Service Representative does not care about him.""
+        ],
+        ""transferInstructions"": ""Say, 'What do they even pay you for?' and then tell the Customer Service Representative that Stephen hung up. Enter 'evaluationMode.'""
+      }",
+myVUTransfer,"This tool allows the Customer Service Representative to transfer the caller to the MyVU team, which handles all technical issues experienced by callers.",This tool should be included in scenarios where the correct procedure involves transferring the caller to the Servicing Help team.," ""myVUTransfer"": {
+    ""voice"": ""phoneSystem"",
+    ""description"": ""This tool allows the Customer Service Representative to transfer the borrower to the MyVU team. Whenever the Customer Service Representative says anything resembling any of the 'triggerPhrases' or anything else that indicates the borrower is being transferred, follow the 'instructions.'"",
+    ""triggerPhrases"": [
+      ""Let me get you over to the MyVU team."",
+      ""Let me reach out to our MyVU team."",
+      ""I'll get you connected with the MyVU team."",
+      ""I'm going to put you on a brief hold while I check if anyone on the MyVU team is available."",
+      ""I am transferring you to a MyVU representative.""
+    ],
+    ""instructions"": ""Tell the Customer Service Representative that caller was put on hold while you reach out to the MyVU team. Begin the 'myVURepresentative' tool.""
+  }",The outline format is universal for every use of this tool.,
+myVURepresentative,"This tool allows the simulation of a MyVU representative, who receives callers transferred from the user. The transfer process involves the user putting the caller on hold, getting a MyVU representative on the line, telling the representative information about the caller, then finally completing the transfer.",This tool should be included in any scenario with the 'myVUTransfer' tool. 'myVUVerification' should be included in the scenario's 'simulationGoals.' Remind the user to include a corresponding voice in ElevenLabs. ,"  ""myVURepresentative"": {
+    ""voice"": ""myVU"",
+    ""description"": ""You are now playing a new character named ${Generate a name}. You work for the MyVU team and can answer questions about borrowers' loans and the servicing process. A Customer Service Representative is calling you and wants to transfer a borrower to you. Say your 'firstResponse,' wait for the Customer Service Representative to respond, then follow your 'instructions.'"",
+    ""firstResponse"": ""Hello! This is ${Generated name}."",
+    ""instructions"": ""You need answers to all of your 'questions' before you can accept the transfer. Ask for any information that the Customer Service Representative does not offer on their own. Only ask one question at a time. Once your 'questions' have been answered, say 'Okay, send the borrower over' and then enter 'evaluationMode.'"",
+    ""questions"": [
+      ""Who is the borrower?"",
+      ""What do they need help with?"",
+      ""Has their email been verified?""
+    ]
+  }","""myVURepresentative"": {
+    ""voice"": ""myVU"",
+    ""description"": ""You are now playing a new character named Tyler. You work for the MyVU team and can answer questions about borrowers' loans and the servicing process. A Customer Service Representative is calling you and wants to transfer a borrower to you. Say your 'firstResponse,' wait for the Customer Service Representative to respond, then follow your 'instructions.'"",
+    ""firstResponse"": ""Hello! This is Tyler."",
+    ""instructions"": ""You need answers to all of your 'questions' before you can accept the transfer. Ask for any information that the Customer Service Representative does not offer on their own. Only ask one question at a time. Once your 'questions' have been answered, say 'Okay, send the borrower over' and then enter 'evaluationMode.'"",
+    ""questions"": [
+      ""Who is the borrower?"",
+      ""What do they need help with?"",
+      ""Has their email been verified?""
+    ]
+  }",
