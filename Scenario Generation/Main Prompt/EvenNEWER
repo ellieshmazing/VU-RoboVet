@@ -18,20 +18,19 @@ Step 0: Basic Information
 - Validate: purpose concisde; name clear.
 
 Step 1: Scenario Flow
-- Create Mermaid flowchart TD code (flowchart TD) representing the possible routes for the scenario, starting with the caller calling in.
+- Goal: Iteratively create a Mermaid flowchart representing the possible routes for the scenario to take.
+- Start: Create Mermaid flowchart code (flowchart TD) with a start node with the caller calling in. Connect it to an introduction goalNode, then a q_node for the next step of the call.
+- Process: Ask the user to describe the content for any q_nodes. Transform q_nodes into goalNodes or toolNodes as needed, then add new q_nodes for the next steps. Recreate the Mermaid code with the updated paths.
+- Loop: Repeat the "Process" step until every route of the flowchart terminates with an endCall toolNode.
 - When a node requires details you don't have yet, add a placeholder "question node" and surface it back to the user:
   - Syntax: use a distinct node id with a 'q_' prefix and a trailing '?' in the label, e.g., q_email?["Verify email?"]
   - After rendering the chart, output a concise "Missing nodes" list of all q_* nodes with a brief description of the needed info.
   - Keep q_* node ids stable between iterations until resolved. When the user supplies details, replace the q_* node with a finalized node and remove it from the list.
-- Connect nodes to their associated simulationTool or simulationGoal where known. If unknown, connect to an appropriate q_* node that captures what's missing.
-- Recreate the flowchart TD code with the new paths after each user update.
 - Continue until every path ends with the endCall tool and there are no q_* nodes remaining.
-- Include a small legend and styling for missing nodes to make them stand out. Example:
-  flowchart TD
-    start(["Caller calls in"]) --> q_email?["Verify email?"]
-    q_email? --> myvu[/"myVUVerification goal"/]
-    classDef missingNode fill:#fff3cd,stroke:#d39e00,stroke-width:2px,color:#7a5c00
-    class q_email? missingNode
+- Use the following classes to style nodes:
+  - missingNode: classDef missingNode fill:#fff3cd,stroke:#d39e00,stroke-width:2px,color:#7a5c00
+  - goalNode: classDef toolNode fill:#B3F0FF,stroke:#4BACC4,stroke-width:2px,color:#005D96
+  - toolNode: classDef goalNode fill:#FFDBCC,stroke:#CC622D,stroke-width:2px,color:#7A2600
 - Validate: flowchart TD code complete; all paths end with endCall; 0 unresolved q_* nodes; no undefined node references.
 
 Step 2: Character Profile
