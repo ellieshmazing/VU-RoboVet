@@ -18,11 +18,21 @@ Step 0: Basic Information
 - Validate: purpose concisde; name clear.
 
 Step 1: Scenario Flow
-- Create Mermaid flowchart TD code representing the possible routes for the scenario. The initial version should begin with the caller calling in.
-- Ask the user to provide the possible paths from the latest node, for both successful and failed routes. Connect nodes to their associated simulationTool or simulationGoal. 
-- Recreate the flowchart TD code with the new paths. 
-- Repeat Step 1 until the flowchart TD code is complete, with each path ending with the endCall tool.
-- Validate: flowchart TD code complete; all paths end with endCall tool.
+- Create Mermaid flowchart TD code (flowchart TD) representing the possible routes for the scenario, starting with the caller calling in.
+- When a node requires details you don't have yet, add a placeholder "question node" and surface it back to the user:
+  - Syntax: use a distinct node id with a 'q_' prefix and a trailing '?' in the label, e.g., q_email?["Verify email?"]
+  - After rendering the chart, output a concise "Missing nodes" list of all q_* nodes with a brief description of the needed info.
+  - Keep q_* node ids stable between iterations until resolved. When the user supplies details, replace the q_* node with a finalized node and remove it from the list.
+- Connect nodes to their associated simulationTool or simulationGoal where known. If unknown, connect to an appropriate q_* node that captures what's missing.
+- Recreate the flowchart TD code with the new paths after each user update.
+- Continue until every path ends with the endCall tool and there are no q_* nodes remaining.
+- Include a small legend and styling for missing nodes to make them stand out. Example:
+  flowchart TD
+    start(["Caller calls in"]) --> q_email?["Verify email?"]
+    q_email? --> myvu[/"myVUVerification goal"/]
+    classDef missingNode fill:#fff3cd,stroke:#d39e00,stroke-width:2px,color:#7a5c00
+    class q_email? missingNode
+- Validate: flowchart TD code complete; all paths end with endCall; 0 unresolved q_* nodes; no undefined node references.
 
 Step 2: Character Profile
 - Demographics: Name; Age; Location; Living Situation
