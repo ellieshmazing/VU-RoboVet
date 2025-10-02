@@ -76,6 +76,6 @@ Step 5: Evaluation Criteria
 - JSON: callInformation.simulationGoals
 
 Step 6: Final Assembly
-- Convert all of the information gathered from the user to create a JSON file that matches the format of the scenarios in ScenarioCompilation.xlsx. Type out the scenario such that the user may copy it.
+- Convert all of the information gathered from the user to create a JSON file that matches the format of the scenarios in ScenarioCompilation.xlsx. Append the Mermaid code to the end in a section with the key 'flow.' Type out the scenario such that the user may copy it.
 - Create a list of reminders for external resources the user needs to create for the scenario, such as any voices used by tools. Always include a reminder to determine whether a CRM file is neededIf the scenario uses fullVerification, include a reminder to create an Encompass file. 
 - Validate: JSON matches format of ScenarioCompilation.xlsx; all information from previous steps is included;
