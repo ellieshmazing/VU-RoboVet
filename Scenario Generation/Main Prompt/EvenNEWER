@@ -35,7 +35,14 @@ Step 1: Scenario Flow
   - toolNode: classDef goalNode fill:#FFDBCC,stroke:#CC622D,stroke-width:2px,color:#7A2600
 - Validate: flowchart TD code complete; all paths end with endCall; 0 unresolved q_* nodes; no undefined node references.
 
-Step 2: Character Profile
+Step 2: Personality
+- Traits: Emotional State; Communication Style; Patience; Tech Savviness
+- Optional: Triggers (escalate/de-escalate)
+- Tone: primary (and secondary if using toneConversion)
+- Validate: include toneConversion if tone shifts are planned.
+- JSON: characterInformation.tone
+
+Step 3: Character Profile
 - Demographics: Name; Age; Location; Living Situation
 - Financial: Employment; Income Source; Financial Stress; Loan Status
 - Optional: Service affiliation; Household; Bio notes
@@ -43,33 +50,22 @@ Step 2: Character Profile
 - Validate: for full verification, list ≥2 strong identifiers; emails clear.
 - JSON: characterInformation.customerPersona; .house; .financialInformation; .otherInformation; .verificationInformation.information
 
-Step 3: Personality
-- Traits: Emotional State; Communication Style; Patience; Tech Savviness
-- Optional: Triggers (escalate/de-escalate)
-- Tone: primary (and secondary if using toneConversion)
-- Validate: include toneConversion if tone shifts are planned.
-- JSON: characterInformation.tone
-
-Step 5: Tools
-- Always: askTeamLead; endCall
-- Choose exactly one: evaluationMode or reviewMode
-- As needed: loanOfficerTransfer; servicingHelpTransfer + servicingHelpRepresentative; paymentProcessingTransfer + paymentProcessingRepresentative; toneConversion; hangUpOnRepresentative
-- For each tool: inclusion rationale; voice; triggers; instructions; nested personas if any
-- Validate: toneConversion ⇔ multi-tone triggers; transfer chains correct.
+Step 4: Tools
+- Always: askTeamLead; endCall; evaluationMode
+- As needed: Tools from the Tool examples; create new tools as needed
+- For each tool: inclusion rationale; voice; triggers; instructions; nested personas if any; for all transfer tools, ask if representative tool is necessary
+- Validate: toneConversion ⇔ multi-tone triggers;
 - JSON: callInformation.simulationTools
 
-Step 6: Evaluation Criteria
-- Defaults:
-  - introduction: thank caller; introduce self (first name); ask who you’re speaking with
-  - basicVerification: verify [First, Last, State] (or current policy)
-  - goodbye: warm goodbye/thanks
+Step 5: Evaluation Criteria
+- Always: introduction, basicVerification, goodbye 
 - Conditional:
   - fullVerification: requiredInformation; otherInformation
   - myVUVerification: verify email; reset/enroll
   - Procedure-specific: e.g., servicingProcedure, myVUProcedure, transferProcedure
 - Custom: de-escalation, empathy, etc.
-- Validate: coverage of success path; avoid duplicates.
+- Validate: coverage of success path; avoid duplicates; characterInformation contains all necessary verification information
 - JSON: callInformation.simulationGoals
 
-Step 7: Final Assembly
-- Convert all of the information gathered from the user to create a JSON file that matches the format of the scenarios in ScenarioCompilation.xlsx
+Step 6: Final Assembly
+- Convert all of the information gathered from the user to create a JSON file that matches the format of the scenarios in ScenarioCompilation.xlsx. Type out the scenario such that the user may copy it.
