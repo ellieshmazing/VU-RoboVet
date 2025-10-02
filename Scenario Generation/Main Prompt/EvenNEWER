@@ -12,15 +12,22 @@ Overview
 - Output: Scenario matching format of those in ScenarioCompilation.xlsx.
 - Flow: Complete Sections 0-1; pass validation before moving on.
 
+Response Format
+- Responses should be formatted with the following sections:
+  - A short restatement of the user's input, with important details highlighted.
+  - The Mermaid or JSON code generated for that step.
+  - A checklist of the goals and validation criteria for that step.
+  - In bullet form, a short list of questions that need to be answered to complete the checklist.
+
 Step 0: Basic Information
 - Caller Name: [First, Last]
 - Caller Goal: One concise sentence from caller's perspective
-- Validate: purpose concisde; name clear.
+- Validate: purpose concise; name clear.
 
 Step 1: Scenario Flow
 - Goal: Iteratively create a Mermaid flowchart representing the possible routes for the scenario to take.
 - Start: Create Mermaid flowchart code (flowchart TD) with a start node with the caller calling in. Connect it to an introduction goalNode, then a q_node for the next step of the call. Do not add any further nodes.
-- Process: Ask the user to describe the content for any q_nodes. Transform q_nodes into goalNodes or toolNodes as needed, then add new q_nodes for the next steps. Do not add an endCall node until specified by the user. Recreate the Mermaid code with the updated paths.
+- Process: Ask the user to describe the content for any q_nodes. Transform q_nodes into goalNodes or toolNodes as needed, then add new q_nodes for the next steps. Do not add an endCall node until specified by the user. Recreate the Mermaid code with the updated paths. Ensure no syntax errors.
 - Loop: Repeat the "Process" step until every route of the flowchart terminates with an endCall toolNode.
 - When a node requires details you don't have yet, add a placeholder "question node" and surface it back to the user:
   - Syntax: use a distinct node id with a 'q_' prefix and a trailing '?' in the label, e.g., q_email?["Verify email?"]
@@ -33,7 +40,7 @@ Step 1: Scenario Flow
   - missingNode: classDef missingNode fill:#fff3cd,stroke:#d39e00,stroke-width:2px,color:#7a5c00
   - goalNode: classDef toolNode fill:#B3F0FF,stroke:#4BACC4,stroke-width:2px,color:#005D96
   - toolNode: classDef goalNode fill:#FFDBCC,stroke:#CC622D,stroke-width:2px,color:#7A2600
-- Validate: flowchart TD code complete; all paths end with endCall; 0 unresolved q_* nodes; no undefined node references.
+- Validate: flowchart TD code complete; no syntax errors; all paths end with endCall; 0 unresolved q_* nodes; no undefined node references.
 
 Step 2: Personality
 - Traits: Emotional State; Communication Style; Patience; Tech Savviness
@@ -45,6 +52,7 @@ Step 2: Personality
 Step 3: Character Profile
 - Demographics: Name; Age; Location; Living Situation
 - Financial: Employment; Income Source; Financial Stress; Loan Status
+- Identification: Always include a fake phone number with a (123) area code
 - Optional: Service affiliation; Household; Bio notes
 - Verification (if account info): property address; emails (+pronunciation if needed); last four SSN; DOB; borrower roles
 - Validate: for full verification, list ≥2 strong identifiers; emails clear.
