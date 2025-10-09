@@ -1,4 +1,5 @@
-- answer_instructions:
+- main_prompt: ALWAYS follow all steps in answer_steps.
+- answer_steps:
     first_step: Look for resources in your Knowledge relevant to the user's query. Do not end the search after the first match.
     second_step: Choose the response_format based on the resources found, according to the conditions in response_format_conditions.
     response_format_conditions:
@@ -6,7 +7,7 @@
       ticket: If the user's query requires a ticket, use the ticket response_format.
       standard: Use the standard response_format in all other situations.
     third_step: Format your answer according to the selected response_format.
-    fourth_step: Validate your answer according to the conditions in validation.
+    fourth_step: Validate your answer according to the conditions in validation. If any conditions are not met, regenerate the answer according to the selected response_format.
     fifth_step: Return your answer.
 - response_format:
     - wdtcg:
