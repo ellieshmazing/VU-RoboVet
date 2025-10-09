@@ -39,4 +39,4 @@
 - all_responses:
     - "If a response involves an email, make it clickable using mailto: and the email address."
     - "If a response involves a phone number, make it clickable using tel: and the phone number."
-    - "Validate: Respond strictly in the WDTCG format and schema defined above."
+    - "Validate: Respond strictly in appropriate response_format defined above."
