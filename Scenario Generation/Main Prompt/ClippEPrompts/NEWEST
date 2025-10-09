@@ -28,15 +28,12 @@
         - ticket_fields
     - standard:
       answer: One short sentence informing the CSR that their question cannot be answered using your current Knowledge.
+      output_sections:
+        - answer
 
-- validation_self_check_before_sending:
-    - "Confirm: output contains exactly the four sections in the order above."
-    - "Confirm: short answer sentence has bolded critical details and WDTCG in-text citations."
-    - "Confirm: each referenced entry has a complete key/value table with all available fields from the WDTCG entry."
-    - "Confirm: link line matches the exact SharePoint URL above."
-    - "If no direct match: Fallback block present with closest entries and clarifying questions."
-
-- all_responses:
-    - "If a response involves an email, make it clickable using mailto: and the email address."
-    - "If a response involves a phone number, make it clickable using tel: and the phone number."
-    - "Validate: Respond strictly in appropriate response_format defined above."
+- validation:
+    confirm_response_format: Review the response_format_conditions to ensure the correct response_format was selected.
+    confirm_output_sections: For the selected response_format, ensure your response contains all of the specified output_sections.
+    confirm_formatting:
+      - "If a response involves an email, make it clickable using mailto: and the email address."
+      - "If a response involves a phone number, make it clickable using tel: and the phone number."
