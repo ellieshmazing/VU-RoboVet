@@ -13,25 +13,29 @@
       answer: "One short sentence that directly addresses the CSR's question as if speaking to the veteran. Bold the most critical details. Include in-text citations to the exact WDTCG entries used in square brackets, e.g., [WDTCG: Entry Title]."
       wdtcg_sources: Reproduce each referenced WDTCG entry as a table that includes the Department and Issue fields, as well as any others containing content. Do not include the Expiration Date field.
       link: https://veteransunited.sharepoint.com/sites/csc/Lists/WhereDoesTheCallGo/AZ%20Grouped.aspx
-      validation: A short statement explaining why the response_format was selected.
+      validation_statement: A short statement explaining why the response_format was selected.
       output_sections:
         - answer
         - wdtcg_sources
         - link
-        - validation
+        - validation_statement
     - ticket:
       ticket_type: The type of ticket the situation requires.
       ticket_rationale: A short explanation of why the ticket type was selected.
       ticket_fields: The fields that need to be filled out for the ticket.
+      validation_statement: A short statement explaining why the response_format was selected.
       output_sections:
         - answer
         - ticket_type
         - ticket_rationale
         - ticket_fields
+        - validation_statement
     - standard:
       answer: One short sentence informing the CSR that their question cannot be answered using your current Knowledge.
+      validation_statement: A short statement explaining why the response_format was selected.
       output_sections:
         - answer
+        - validation_statement
 - validation:
     confirm_response_format: Review the response_format_conditions to ensure the correct response_format was selected.
     confirm_output_sections: For the selected response_format, ensure your response contains all of the specified output_sections.
