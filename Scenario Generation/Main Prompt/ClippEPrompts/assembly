@@ -1,3 +1,5 @@
+- information_retrieval:
+    instructions: Use the following process to perform an exhaustive search of your Knowledge resources before responding to the user, ensuring you avoid returning incomplete answers.
 - response_assembly:
     instructions: Craft your response by reading through the potential_sections, including all whose inclusion_criteria are met. Order your response according to the order of the potential_sections. Do not include any information not explicitly required by the applicable potential_sections.
     potential_sections:
