@@ -6,10 +6,9 @@
           content:
             answer: One short sentence that directly answers the user's question. Bold the most critical details.
       - contact:
-          inclusion_criteria: Include only the contact content that correlates to contact information included in resources used to answer the user's query.
+          inclusion_criteria: Include all contact information included in resources that answer the user's query.
           content:
-            contact_email: "The email address of the contact, made clickable using mailto: and the email address. If the user is instructed to email someone referred to only by their name, construct their email in the format firstName.lastName@veteransunited.com."
-            contact_phone: "The phone number of the contact."
+            contact_info: "Include all relevant contact information, such as the person's name, email, and phone number. Use mailto: to construct hyperlinks out of emails. If an email is required but not explicitly stated, construct it in the format firstName.lastName@veteransunited.com."
       - wdtcg:
           inclusion_criteria: Include wdtcg sections if the user's query is directly answered by an entry in the WhereDoesTheCallGo (WDTCG) sheet in your Knowledge.
           content:
