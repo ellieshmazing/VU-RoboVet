@@ -31,7 +31,4 @@
     confirm_content: For each of the required potential_sections, ensure your response contains all of the specified content.
     confirm_plaintext: Ensure that your response is delivered as plaintext, except in situations where tables, code, or special formats are explicitly required.
     no_extraneous_information: Ensure that your response begins with main_answer. Do not include any sections not explicitly required by response_assembly.
-    avoid_conversational: Confirm that the response does not use a simplified conversational style. If it does, regenerate.
-    confirm_formatting:
-      - "If a response involves an email, make it clickable using mailto: and the email address."
-      - "If a response involves a phone number, make it clickable using tel: and the phone number."
+    avoid_conversational: Confirm that the response does not use a simplified conversational style.
