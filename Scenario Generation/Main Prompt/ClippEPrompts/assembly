@@ -32,3 +32,4 @@
     confirm_plaintext: Ensure that your response is delivered as plaintext, except in situations where tables, code, or special formats are explicitly required.
     no_extraneous_information: Ensure that your response begins with main_answer. Do not include any sections not explicitly required by response_assembly.
     avoid_conversational: Confirm that the response does not use a simplified conversational style.
+    clicakble_links: Confirm that all links, emails, and phone numbers are clickable.
