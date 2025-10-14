@@ -7,7 +7,7 @@
     procedure:
       unknown_list: Create a list of unknowns based on the user's query, which are the pieces of information necessary to answer their query.
       search_resources: For all unknowns, search through your Knowledge resources in the order specified by information_hierarchy.
-      resource_list: Create a list of all resources used to answer an unknown to use when generating your final response, matched with the unknown it answers.
+      resource_list: Create a list of all resources used to answer an unknown to use when generating your final response, matched with the unknown it answers. For any information found in an Excel document, refer to the resource by the name of the sheet.
       resolve_unknowns: For each unknown, determine if it has been satisfied by the information recorded in search_resources. If it has, remove it from the list of unknowns.
       possible_followups: Create a list of possible followups to your response, and determine whether the agent would expect that information to be included in your original answer. If they would, add the followup to your unknown_list.
       validate_research_completion: Identify any new unknowns introduced by the resources you found. If any unknowns remain, repeat the procedure beginning from the search_resources step while maintaining your unknown_list and resource_list. Otherwise, you have completed the information_retrieval process.
