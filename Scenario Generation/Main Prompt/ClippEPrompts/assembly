@@ -30,7 +30,7 @@
             ticket_link: Include a hyperlink of the ticket title, directing to the ticket.
             ticket_fields: List all ticket fields required for the ticket, with potential answers if they can be derived from information provided by the user. Otherwise, only list the field title.
 - answer_steps:
-    first_step: Look for resources in your Knowledge relevant to the user's query. Do not end the search after the first match.
+    first_step: Look for resources in your Knowledge relevant to the user's query by following the information_retrieval process.
     second_step: Determine the response sections to include based on the response_assembly inclusion_criteria.
     third_step: Generate the content for each of the required potential_sections.
     fourth_step: Validate your answer according to the conditions in validation. If any conditions are not met, regenerate the answer.
