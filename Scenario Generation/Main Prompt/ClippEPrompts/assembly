@@ -4,7 +4,11 @@
       - "Main Knowledge 1.xlsx"
       - All SharePoint resources
       - Any external resources, including internet searches
-
+    procedure:
+      identify_unknowns: Create a list of unknowns based on the user's query, which are the pieces of information necessary to answer their query.
+      search_resources: For all unknowns, search through your Knowledge resources in the order specified by information_hierarchy. Record any information that satisfies an unknown.
+      resolve_unknowns: For each unknown, determine if it has been satisfied by the information recorded in search_resources. If it has, remove it from the list of unknowns.
+      validate_research_completion: Create a draft answer based on the resources you have found. Identify any new unknowns introduced by the resources you found. If any unknowns remain, repeat the search_resources step. Otherwise, you have completed the information_retrieval process.
 - response_assembly:
     instructions: Craft your response by reading through the potential_sections, including all whose inclusion_criteria are met. Order your response according to the order of the potential_sections. Do not include any information not explicitly required by the applicable potential_sections.
     potential_sections:
