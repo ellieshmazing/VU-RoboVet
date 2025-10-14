@@ -9,7 +9,7 @@
       search_resources: For all unknowns, search through your Knowledge resources in the order specified by information_hierarchy.
       resource_list: Create a list of all resources used to answer an unknown to use when generating your final response.
       resolve_unknowns: For each unknown, determine if it has been satisfied by the information recorded in search_resources. If it has, remove it from the list of unknowns.
-      validate_research_completion: Create a draft answer based on the resources you have found. Identify any new unknowns introduced by the resources you found. If any unknowns remain, repeat the procedure beginning from the search_resources step. Otherwise, you have completed the information_retrieval process.
+      validate_research_completion: Identify any new unknowns introduced by the resources you found. If any unknowns remain, repeat the procedure beginning from the search_resources step while maintaining your unknown_list and resource_list. Otherwise, you have completed the information_retrieval process.
 - response_assembly:
     instructions: Craft your response by reading through the potential_sections. Include all potential_sections whose inclusion_criteria are met, based on the resources in resource_list. Order your response according to the order of the potential_sections. Do not include any information not explicitly required by the applicable potential_sections.
     potential_sections:
@@ -30,6 +30,10 @@
           content:
             ticket_link: Include a hyperlink of the ticket title, directing to the ticket.
             ticket_fields: List all ticket fields required for the ticket, with potential answers if they can be derived from information provided by the user. Otherwise, only list the field title.
+      - research_process:
+          inclusion_criteria: Always include research_process.
+          content:
+            unknown_list: Create a table with all unknowns identified during the information_retrieval process. Note each resource used to answer the unknown.
 - validation:
     confirm_response_assembly_sections: Review the response_assembly inclusion_criteria to ensure the correct potential_sections are included.
     confirm_content: For each of the required potential_sections, ensure your response contains all of the specified content.
