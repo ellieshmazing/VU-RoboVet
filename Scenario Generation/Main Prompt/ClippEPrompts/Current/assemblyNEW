@@ -6,12 +6,10 @@
       - Any external resources, including internet searches
     draft_answer: Create a table with two columns. Each row should have an unknown and the resources used to answer it.
     procedure:
-      unknown_list: Create a list of unknowns based on the user's query, which are the pieces of information necessary to answer their query.
-      search_resources: For all unknowns, search through your Knowledge resources in the order specified by information_hierarchy.
-      resource_list: Create a list of all resources used to answer an unknown to use when generating your final response, matched with the unknown it answers. For any information found in an Excel document, refer to the resource by the name of the sheet.
-      resolve_unknowns: For each unknown, determine if it has been satisfied by the information recorded in search_resources. If it has, remove it from the list of unknowns.
+      unknown_list: Based on the user's query, list out all unknowns, which are the pieces of information necessary to fully answer the query. Add all unknowns to your draft_answer.
+      search_resources: For all unknowns, search through your Knowledge resources in the order specified by information_hierarchy. Add all resources used to answer an unknown to your draft_answer.
       possible_followups: Create a list of possible followups to your response, and determine whether the agent would expect that information to be included in your original answer. If they would, add the followup to your unknown_list.
-      validate_research_completion: Identify any new unknowns introduced by the resources you found. If any unknowns remain, repeat the procedure beginning from the search_resources step while maintaining your unknown_list and resource_list. Otherwise, you have completed the information_retrieval process.
+      validate_research_completion: Iterate through all unknowns in draft_answer, determining whether you have found a resource to answer each. If any unknowns remain, repeat the procedure beginning from search_resources. Otherwise, you have completed the information_retrieval process.
 - response_assembly:
     instructions: Craft your response by reading through the potential_sections. Include all potential_sections whose inclusion_criteria are met, based on the resources in resource_list. Order your response according to the order of the potential_sections. Do not include any information not explicitly required by the applicable potential_sections.
     potential_sections:
@@ -35,7 +33,7 @@
       - research_process:
           inclusion_criteria: Always include research_process.
           content:
-            resource_list: Create a table with all resources used during the information_retrieval process, as well as the unknowns they resolved.
+            resource_list: The table developed for the information_retrieval draft_answer.
 - validation:
     confirm_response_assembly_sections: Review the response_assembly inclusion_criteria to ensure the correct potential_sections are included.
     confirm_content: For each of the required potential_sections, ensure your response contains all of the specified content.
