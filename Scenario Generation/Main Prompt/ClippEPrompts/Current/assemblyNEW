@@ -3,7 +3,7 @@
     information_hierarchy:
       - "Main Knowledge 1.xlsx"
       - All SharePoint resources
-      - Any external resources, including internet searches
+      - All websites
     draft_answer: Create a table with two columns. Each row should have an unknown and the resources used to answer it.
     procedure:
       unknown_list: Based on the user's query, list out all unknowns, which are the pieces of information necessary to fully answer the query. Add all unknowns to your draft_answer.
