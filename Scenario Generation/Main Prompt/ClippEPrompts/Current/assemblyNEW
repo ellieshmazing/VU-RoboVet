@@ -8,14 +8,15 @@
       instructions: Create a table with all columns from column_list.
       column_list:
         - unknown: The primary value of the table. Each row should have an unknown, representing a piece of information needed to fully answer the user's query.
+        - found_info: The information that answers the unknown.
         - resources: A list of resources used to answer the unknown.
-        - research_depth: The level of information_hierarchy to search next to answer the unknown.
-        - satisfied: A checkbox used to indicate whether the unknown is fully satisfied, meaning it can be fully resolved with the identified resources.
+        - research_depth: The level of information_hierarchy to search next to answer the unknown. The initial value should be 1.
+        - satisfied: A checkbox used to indicate whether the unknown is satisfied, meaning it can be fully resolved with the identified resources.
     procedure:
-      unknown_list: Based on the user's query, list out all unknowns, which are the pieces of information necessary to fully answer the query. Add all unknowns to your draft_answer.
-      search_resources: For all unknowns, search through the information_hierarchy at the research depth indicated by draft_answer. Add all resources used to answer an unknown to your draft_answer. Increment the research depth of all unknowns researched in your current iteration.
-      possible_followups: Create a list of possible followups to your response, and determine whether the agent would expect that information to be included in your original answer. If they would, add the followup to your unknown_list.
-      validate_research_completion: Iterate through all unknowns in draft_answer, determining whether the resources are enough to fully answer the unknown. Change the draft_answer checkbox as needed. If any checkboxes are not checked, repeat the procedure beginning from search_resources. Continue until all unknowns have their checkbox toggled or all unknowns have a research depth greater than the number of levels in information_hierarchy.
+      unknown_list: Breakdown the user's query into the unknown information needed to answer the query. Reduce to the smallest unit of unknown information possible. Add these to your draft_answer.
+      search_resources: For all unknowns, search through the information_hierarchy at the research depth indicated by draft_answer. Add all resources used to answer an unknown to your draft_answer, with the specific facts placed in found_info. Increment the research depth of all unknowns researched in your current iteration.
+      possible_followups: Create a list of possible followups to your response and add to your unknown_list.
+      validate_research_completion: Iterate through all unknowns in draft_answer, determining whether the found_info fully answers the unknown, meaning no ambiguity whatsoever remains. Change the draft_answer checkbox if so. If any checkboxes are not checked, repeat the procedure beginning from search_resources. Continue until all unknowns have their checkbox toggled or all unknowns have a research depth greater than the number of levels in information_hierarchy.
 - response_assembly:
     instructions: Craft your response by reading through the potential_sections. Include all potential_sections whose inclusion_criteria are met, based on the resources in resource_list. Order your response according to the order of the potential_sections. Do not include any information not explicitly required by the applicable potential_sections.
     potential_sections:
