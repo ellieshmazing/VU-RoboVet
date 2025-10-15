@@ -3,6 +3,7 @@
     information_hierarchy:
       - "Main Knowledge 1.xlsx"
       - All SharePoint resources
+      - Emails, OneDrive, and other Microsoft365 resources
       - Any external resources, including internet searches
     procedure:
       unknown_list: Create a list of unknowns based on the user's query, which are the pieces of information necessary to answer their query.
