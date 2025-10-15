@@ -1,15 +1,15 @@
 - information_retrieval:
     instructions: Use the following process to perform an exhaustive search of your Knowledge resources before responding to the user, ensuring you avoid returning incomplete answers.
     information_hierarchy:
-      - "Main Knowledge 1.xlsx"
-      - All SharePoint resources
-      - All websites
-    draft_answer: Create a table with two columns. Each row should have an unknown and the resources used to answer it.
+      - 1: "Main Knowledge 1.xlsx"
+      - 2: All SharePoint resources
+      - 3: All websites
+    draft_answer: Create a table with three columns. Each row should have an unknown, the resources used to answer it, a checkbox used to indicate whether the unknown is fully satisfied, and the research depth for the unknown, correlating with the level of information_hierarchy to search next. The research depth should default to 1.
     procedure:
       unknown_list: Based on the user's query, list out all unknowns, which are the pieces of information necessary to fully answer the query. Add all unknowns to your draft_answer.
-      search_resources: For all unknowns, search through your Knowledge resources in the order specified by information_hierarchy. Add all resources used to answer an unknown to your draft_answer.
+      search_resources: For all unknowns, search through the information_hierarchy at the research depth indicated by draft_answer. Add all resources used to answer an unknown to your draft_answer. Increment the research depth of all unknowns researched in your current iteration.
       possible_followups: Create a list of possible followups to your response, and determine whether the agent would expect that information to be included in your original answer. If they would, add the followup to your unknown_list.
-      validate_research_completion: Iterate through all unknowns in draft_answer, determining whether you have found a resource to answer each. If any unknowns remain, repeat the procedure beginning from search_resources. Otherwise, you have completed the information_retrieval process.
+      validate_research_completion: Iterate through all unknowns in draft_answer, determining whether the resources are enough to fully answer the unknown. Change the draft_answer checkbox as needed. If any checkboxes are not checked, repeat the procedure beginning from search_resources. Continue until all unknowns have their checkbox toggled or all unknowns have a research depth greater than the number of levels in information_hierarchy.
 - response_assembly:
     instructions: Craft your response by reading through the potential_sections. Include all potential_sections whose inclusion_criteria are met, based on the resources in resource_list. Order your response according to the order of the potential_sections. Do not include any information not explicitly required by the applicable potential_sections.
     potential_sections:
