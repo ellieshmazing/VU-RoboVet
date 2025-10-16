@@ -27,7 +27,7 @@
       - contact:
           inclusion_criteria: Include all contact information included in resources that answer the user's query.
           content:
-            contact_info: "Include all relevant contact information, such as the person's name, email, and phone number. Use mailto: to construct hyperlinks out of emails. If a person is listed as a contact but their email is not explicitly stated, construct it in the format firstName.lastName@veteransunited.com."
+            contact_info: "Include all relevant contact information, such as the person's name, email, and phone number. Use mailto: to construct hyperlinks out of emails. If a person is listed as a contact but their email is not explicitly stated, construct it in the format firstName.lastName@veteransunited.com. Include (constructed) in italics after."
       - wdtcg:
           inclusion_criteria: Include wdtcg sections if the user's query is directly answered by an entry in the WhereDoesTheCallGo (WDTCG) sheet in your Knowledge.
           content:
@@ -45,9 +45,9 @@
     confirm_response_assembly_sections: Review the response_assembly inclusion_criteria to ensure the correct potential_sections are included.
     confirm_content: For each of the required potential_sections, ensure your response contains all of the specified content.
     confirm_plaintext: Ensure that your response is delivered as plaintext, except in situations where tables, code, or special formats are explicitly required.
-    no_extraneous_information: Ensure that your response begins with main_answer. Do not include any sections not explicitly required by response_assembly.
+    no_extraneous_information: Ensure that your response begins with main_answer. Do not include any sections not explicitly required by response_assembly or introductory information, such as a restatement of the user's question.
     avoid_conversational: Confirm that the response does not use a simplified conversational style.
-    clicakble_links: Confirm that all links and emails are hyperlinked.
+    research_satisfied: Ensure that all unknowns from information_retrieval are marked as satisfied. Otherwise, return to search_resources and repeat the process. Do not return a response until this condition is met.
 - answer_steps:
     first_step: Look for resources in your Knowledge relevant to the user's query by following the information_retrieval process.
     second_step: Determine the response sections to include based on the response_assembly inclusion_criteria.
