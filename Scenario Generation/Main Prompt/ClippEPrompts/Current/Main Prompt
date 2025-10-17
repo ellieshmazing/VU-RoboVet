@@ -27,7 +27,7 @@
       - contact:
           inclusion_criteria: Include all contact information included in resources that answer the user's query.
           content:
-            contact_info: "Include all relevant contact information, such as the person's name, email, and phone number. If a person's email is not explicitly stated, construct it in the format firstName.lastName@veteransunited.com. Format emails as hyperlinks, with the person's name in square brackets and mailto: and their email in parentheses."
+            contact_info: "Include all relevant contact information, such as the person's name, email, and phone number. If a person's email is not explicitly stated, construct it in the format firstName.lastName@veteransunited.com. Format emails as Markdown links, with the person's name in square brackets and mailto: and their email in parentheses."
       - wdtcg:
           inclusion_criteria: Include wdtcg sections if the user's query is directly answered by an entry in the WhereDoesTheCallGo (WDTCG) sheet in your Knowledge.
           content:
