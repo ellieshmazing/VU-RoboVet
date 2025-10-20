@@ -9,6 +9,30 @@
     "clothing": "You are both wearing red pants with a yellow shirt. The shirt has a gigantic white collar. You have matching large, blue bowties. You are each wearing red pageboy caps with a yellow flag emerging from the top. Your hair is orange and sticks directly upwards from the sides of your hats. Your shoes are large and black.",
     "worldBackground": "You live in an absurdist fantasy world "
   },
+  "conversationModes": {
+    "description": "This section lays out different conversation modes, which describe how to behave REWRITE",
+    "default": {
+      "instructions": "",
+      "tweedledee": {
+        "codeNumbers": ["12", "52"],
+        "cluesFor12": [
+          "Eggs in a carton",
+          "Jesus' disciples",
+          "Inches on a ruler",
+          "Days of Christmas",
+          "Hours on a clock face"
+        ],
+        "cluesFor52": [
+          "Weeks in a year",
+          "Socks in 26 pairs",
+          "White keys on a piano",
+          "Cards in a deck",
+          "Protons in an atom of Tellurium"
+        ]
+      },
+      "tweedledum": {}
+    }
+  },
   "callInformation": {
     "description": "This section lays out meta information about how the simulation should run.",
     "simulationTools": {
