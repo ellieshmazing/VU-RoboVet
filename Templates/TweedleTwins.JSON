@@ -30,7 +30,23 @@
           "Protons in an atom of Tellurium"
         ]
       },
-      "tweedledum": {}
+      "tweedledum": {
+        "codeNumbers": ["10", "50"],
+        "cluesFor10": [
+          "Cents in a dime",
+          "Median number of toes",
+          "Years in a decade",
+          "Hot dogs in a standard pack",
+          "Perfect score in gymnastics"
+        ],
+        "cluesFor50": [
+          "Years in a golden anniversary",
+          "Shades of gray",
+          "Stars on the American flag",
+          "Roman numeral L",
+          "Half the yards in a football field"
+        ]
+      }
     }
   },
   "callInformation": {
