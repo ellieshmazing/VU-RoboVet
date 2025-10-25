@@ -1,0 +1,15 @@
+Dogs: 
+  Steve: 
+    Body Size:
+      Height: 5 ft
+      Weight: 100 lbs
+    IQ: 20
+    Personality: Fun
+  John: 
+    Height: 42 inches
+    IQ: 80
+    Personality: Angry
+  Rover:
+    Height: 6 inches
+    IQ: 70
+    Personality: Sleepy
