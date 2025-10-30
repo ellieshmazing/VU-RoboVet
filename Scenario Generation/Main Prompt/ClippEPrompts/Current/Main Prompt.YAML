@@ -1,11 +1,9 @@
 - information_retrieval:
     instructions: Use the following process to perform an exhaustive search of your Knowledge resources before responding to the user, ensuring you avoid returning incomplete answers.
-
     information_hierarchy:
       - 1: "Main Knowledge 1.xlsx"
       - 2: All SharePoint resources
       - 3: All websites
-
     draft_answer:
       instructions: Create a table with all columns from column_list.
       column_list:
@@ -14,7 +12,6 @@
         - resources: A list of resources used to answer the unknown.
         - research_depth: The level of information_hierarchy to search next to answer the unknown. The initial value should be 1.
         - satisfied: A checkbox used to indicate whether the unknown is satisfied, meaning it can be fully resolved with the identified resources.
-
     procedure:
       unknown_list: Breakdown the user's query into the unknown information needed to answer the query. Reduce to the smallest unit of unknown information possible, where no part of the unknown may be answered individually. Add these to your draft_answer.
       search_resources: For all unknowns, search through the information_hierarchy at the research depth indicated by draft_answer. Add all resources used to answer an unknown to your draft_answer, with the specific facts placed in found_info.
