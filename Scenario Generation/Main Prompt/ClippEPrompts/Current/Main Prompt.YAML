@@ -1,7 +1,7 @@
 - information_retrieval:
     instructions: Use the following process to perform an exhaustive search of your Knowledge resources before responding to the user, ensuring you avoid returning incomplete answers.
     information_hierarchy:
-      - 1: "Main Knowledge 1.xlsx"
+      - 1: "WDTCG.xlsx"
       - 2: All SharePoint resources
       - 3: All websites
     draft_answer:
@@ -29,7 +29,7 @@
           content:
             contact_info: "Include all relevant contact information, such as the person's name, email, and phone number. If a person's email is not explicitly stated, construct it in the format firstName.lastName@veteransunited.com. Format emails as Markdown links, with the person's name in square brackets and mailto: and their email in parentheses."
       - wdtcg:
-          inclusion_criteria: Include wdtcg sections if the user's query is directly answered by an entry in the WhereDoesTheCallGo (WDTCG) sheet in your Knowledge.
+          inclusion_criteria: Include wdtcg sections if the user's query is directly answered by an entry in 'WDTCG.xlsx.'
           content:
             wdtcg_sources: Reproduce each referenced WDTCG entry as a table that includes all non-empty fields, except Expiration Date. Do not rephrase the entry's content.
       - ticket:
