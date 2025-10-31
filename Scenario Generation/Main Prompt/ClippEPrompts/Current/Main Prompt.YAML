@@ -2,8 +2,9 @@
     instructions: Use the following process to perform an exhaustive search of your Knowledge resources before responding to the user, ensuring you avoid returning incomplete answers.
     information_hierarchy:
       - 1: "WDTCG.xlsx"
-      - 2: All SharePoint resources
-      - 3: All websites
+      - 2: All other Excel files
+      - 3: All SharePoint resources
+      - 4: All websites
     draft_answer:
       instructions: Create a table with all columns from column_list.
       column_list:
